@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Page - Step by Step</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Step 1: Basic Structure -->
+    <h1>My Practice Page</h1>
+    <p>Welcome to learning HTML!</p>
+
+    <!-- Step 2: Headings -->
+    <h2>This is Heading 2</h2>
+    <h3>This is Heading 3</h3>
+    <h4>This is Heading 4</h4>
+
+    <!-- Step 3: Paragraphs and Text Formatting -->
+    <p>This is a normal paragraph.</p>
+    <p>This is a <strong>bold</strong> text.</p>
+    <p>This is an <em>italic</em> text.</p>
+    <p>This is a <mark>highlighted</mark> text.</p>
+
+    <!-- Step 4: Lists -->
+    <h3>Unordered List</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h3>Ordered List</h3>
+    <ol>
+        <li>First step</li>
+        <li>Second step</li>
+        <li>Third step</li>
+    </ol>
+
+    <!-- Step 5: Links -->
+    <h3>Links</h3>
+    <p>Visit <a href="https://www.google.com"><img src="https://www.google.com/favicon.ico" alt="Google"></a></p>
+    <p><a href="https://www.wikipedia.org"><img src="https://www.wikipedia.org/favicon.ico" alt="Wikipedia"></a></p>
+
+    <!-- Step 6: Images -->
+    <h3>Images</h3>
+    <img src="https://images.unsplash.com/photo-1580186648695-fe2fd5a5ce8b?w=300&auto=format&fit=crop&q=60" alt="Sample Image" width="200">
+
+    <!-- Step 7: Buttons -->
+    <h3>Buttons</h3>
+    <button>Click Me</button>
+    <button>Submit</button>
+
+    <!-- Step 8: Input Fields -->
+    <h3>Input Fields</h3>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+    <br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter your email">
+
+    <!-- Step 9: Simple JavaScript -->
+    <h3>JavaScript Demo</h3>
+    <button onclick="showMessage()">Click for Message</button>
+    <p id="message"></p>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').textContent = 'Hello! You clicked the button.';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,552 @@
+ <!DOCTYPE html>
+<!--
+  MuseHub Creative — index.html
+  Standalone complete homepage
+  Linked: styles.css | script.js | Font Awesome CDN | Google Fonts (in CSS)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MuseHub Creative — Cookbooks, Romance Books, Kids' Stories, Creative Journals and Lifestyle Essentials to inspire your daily creativity." />
+  <meta name="keywords" content="cookbooks, romance books, kids stories, creative journals, lifestyle essentials, women essentials" />
+  <meta property="og:title" content="MuseHub Creative — Inspires You" />
+  <meta property="og:description" content="A curated creative boutique for inspired daily living." />
+  <meta property="og:type" content="website" />
+
+  <title>MuseHub Creative — Inspires You</title>
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+<style>
+     
+    /* ============================================================
+   MuseHub Creative — styles.css
+   Modern premium design | Fully responsive | Complete styles
+   ============================================================ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* ── CSS Custom Properties ── */
+:root {
+  /* Brand palette - Women's Colors */
+  --primary:    #e91e63;
+  --primary-lt: #f48fb1;
+  --secondary:  #9c27b0;
+  --accent:     #ff4081;
+  --orange:     #f97316;
+  --yellow:     #facc15;
+  --green:      #10b981;
+  --teal:       #14b8a6;
+  --sky:        #0ea5e9;
+  --fuchsia:    #d946ef;
+
+  /* Neutrals */
+  --text:       #0f0f1a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --white:      #ffffff;
+  --bg:         #fdf2f8;
+  --card-bg:    #ffffff;
+
+  /* Radii */
+  --r-sm:  10px;
+  --r-md:  16px;
+  --r-lg:  24px;
+  --r-xl:  32px;
+  --r-2xl: 40px;
+  --r-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 3px rgba(0,0,0,.06);
+  --shadow-sm: 0 4px 12px rgba(0,0,0,.08);
+  --shadow-md: 0 8px 28px rgba(0,0,0,.10);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,.14);
+  --shadow-xl: 0 32px 64px rgba(0,0,0,.18);
+
+  /* Transition */
+  --ease: .28s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; transition: color var(--ease); }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+address { font-style: normal; }
+
+/* ── Typography ── */
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+
+/* ── Container ── */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+  
+  
+  
+  
+  
+    /* ========================================================
+   TRENDING BLOG POSTS
+======================================================== */
+#blog {
+  padding: 6rem 0;
+  position: relative;
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%);
+  overflow: hidden;
+}
+.blog-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+.bb-pink {
+  width: 320px; height: 320px;
+  background: rgba(236,72,153,.18);
+  top: 4rem; right: 4rem;
+}
+.bb-violet {
+  width: 420px; height: 420px;
+  background: rgba(124,58,237,.15);
+  bottom: 3rem; left: 2rem;
+}
+
+/* Blog grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+/* Blog card */
+.blog-card {
+  background: var(--white);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+}
+.blog-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.bc-1:hover { border-color: rgba(249,115,22,.28); }
+.bc-2:hover { border-color: rgba(236,72,153,.28); }
+.bc-3:hover { border-color: rgba(124,58,237,.28); }
+.bc-4:hover { border-color: rgba(14,165,233,.28); }
+.bc-5:hover { border-color: rgba(16,185,129,.28); }
+.bc-6:hover { border-color: rgba(217,70,239,.28); }
+
+.blog-img-wrap {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+}
+.blog-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .8s ease;
+}
+.blog-card:hover .blog-img-wrap img { transform: scale(1.08); }
+
+/* Category badge */
+.blog-cat-badge {
+  position: absolute;
+  top: .9rem; left: .9rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  padding: .38rem .9rem;
+  border-radius: var(--r-full);
+  font-size: .71rem;
+  font-weight: 700;
+  color: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+.bg-orange  { background: linear-gradient(135deg, #f97316, #facc15); }
+.bg-pink    { background: linear-gradient(135deg, #ec4899, #f43f5e); }
+.bg-violet  { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+.bg-sky     { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
+.bg-green   { background: linear-gradient(135deg, #10b981, #84cc16); }
+.bg-fuchsia { background: linear-gradient(135deg, #d946ef, #ec4899); }
+
+.blog-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 3.5rem;
+  position: relative;
+}
+.blog-meta {
+  font-size: .77rem;
+  color: var(--text-light);
+  margin-bottom: .75rem;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+.blog-card-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: .65rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color var(--ease);
+}
+.blog-card:hover .blog-card-title { color: var(--primary); }
+.blog-card-desc {
+  font-size: .87rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+  margin-bottom: 1.3rem;
+}
+.blog-read-more {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  font-size: .87rem;
+  font-weight: 700;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  padding: .6rem 1rem;
+  border-radius: var(--r-md);
+  transition: transform var(--ease), box-shadow var(--ease);
+}
+.blog-read-more:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(233,30,99,.25);
+}
+.blog-read-more i { font-size: .75rem; }
+
+</style>
+<!-- ======================================================
+     TRENDING BLOG POSTS
+====================================================== -->
+<section id="blog" aria-labelledby="blogHeading">
+  <div class="blog-bg-blob bb-pink"></div>
+  <div class="blog-bg-blob bb-violet"></div>
+
+  <div class="container">
+
+    <header class="section-header">
+      <span class="section-badge badge-fuchsia">Latest Articles</span>
+      <h2 class="section-title reveal" id="blogHeading">
+        Trending <span class="gradient-fuchsia">Blog Posts</span>
+      </h2>
+      <p class="section-sub reveal">
+        Stories, tips, and inspiration from the creative world to fuel your passion.
+      </p>
+    </header>
+
+    <div class="blog-grid">
+
+      <!-- Item 1 - Skincare -->
+      <article class="blog-card bc-1 reveal" aria-label="Skincare Essentials">
+        <div class="blog-img-wrap">
+          <span class="blog-cat-badge bg-orange">
+            <i class="fa-solid fa-spa"></i> Skincare
+          </span>
+          <img
+            src="https://m.media-amazon.com/images/I/51x78epntaL._SL1060_.jpg"
+            alt="Skincare Essentials"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-meta">
+            <i class="fa-solid fa-star"></i> 4.9 &nbsp;•&nbsp; 234 reviews
+          </p>
+          <h3 class="blog-card-title">Skincare Essentials</h3>
+          <p class="blog-card-desc">Daily skincare must-haves. Glow with confidence every single day.</p>
+          <a href="https://musehubcreative.blogspot.com/p/skincare-essentials.html" class="blog-read-more" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> View Deal
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 2 - Hair Care -->
+      <article class="blog-card bc-2 reveal" aria-label="Hair Care Products">
+        <div class="blog-img-wrap">
+          <span class="blog-cat-badge bg-pink">
+            <i class="fa-solid fa-leaf"></i> Hair Care
+          </span>
+          <img
+            src="https://m.media-amazon.com/images/I/81P7Bs8B2NL._SL1500_.jpg"
+            alt="Hair Care Products"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-meta">
+            <i class="fa-solid fa-star"></i> 4.8 &nbsp;•&nbsp; 189 reviews
+          </p>
+          <h3 class="blog-card-title">Hair Care Products</h3>
+          <p class="blog-card-desc">Healthy & shiny hair. Care for every strand with love.</p>
+          <a href="https://musehubcreative.blogspot.com/2026/03/hair-care-products.html" class="blog-read-more" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> View Deal
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 3 - Makeup -->
+      <article class="blog-card bc-3 reveal" aria-label="Makeup Essentials">
+        <div class="blog-img-wrap">
+          <span class="blog-cat-badge bg-violet">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Makeup
+          </span>
+          <img
+            src="https://m.media-amazon.com/images/I/81jbSizs6gL._SL1500_.jpg"
+            alt="Makeup Basics"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-meta">
+            <i class="fa-solid fa-star"></i> 4.9 &nbsp;•&nbsp; 312 reviews
+          </p>
+          <h3 class="blog-card-title">Makeup Essentials</h3>
+          <p class="blog-card-desc">Everyday beauty essentials. Simple, stylish, stunning looks.</p>
+          <a href="https://musehubcreative.blogspot.com/2026/03/top-makeup-essentials.html" class="blog-read-more" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> View Deal
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 4 - Comfort Wear -->
+      <article class="blog-card bc-4 reveal" aria-label="Comfort Wear">
+        <div class="blog-img-wrap">
+          <span class="blog-cat-badge bg-sky">
+            <i class="fa-solid fa-home"></i> Comfort Wear
+          </span>
+          <img
+            src="https://m.media-amazon.com/images/I/71XRZJMs1rL._AC_SX569_.jpg"
+            alt="Comfort Wear for Home"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-meta">
+            <i class="fa-solid fa-star"></i> 4.7 &nbsp;•&nbsp; 156 reviews
+          </p>
+          <h3 class="blog-card-title">Comfort Wear for Home</h3>
+          <p class="blog-card-desc">Cozy essentials — nightwear, loungewear & pajamas for ultimate comfort.</p>
+          <a href="https://musehubcreative.blogspot.com/2026/03/comfort-wear-for-home_10.html" class="blog-read-more" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> View Deal
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 5 - Handbags -->
+      <article class="blog-card bc-5 reveal" aria-label="Handbags and Wallets">
+        <div class="blog-img-wrap">
+          <span class="blog-cat-badge bg-green">
+            <i class="fa-solid fa-bag-shopping"></i> Accessories
+          </span>
+          <img
+            src="https://m.media-amazon.com/images/I/71HVNrVUdgL._AC_SX569_.jpg"
+            alt="Handbags and Wallets"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-meta">
+            <i class="fa-solid fa-star"></i> 4.9 &nbsp;•&nbsp; 267 reviews
+          </p>
+          <h3 class="blog-card-title">Handbags & Wallets</h3>
+          <p class="blog-card-desc">Stylish daily accessories. Carry elegance with ease wherever you go.</p>
+          <a href="https://musehubcreative.blogspot.com/2026/03/handbags-wallets.html" class="blog-read-more" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> View Deal
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 6 - Jewelry -->
+      <article class="blog-card bc-6 reveal" aria-label="Jewelry and Accessories">
+        <div class="blog-img-wrap">
+          <span class="blog-cat-badge bg-fuchsia">
+            <i class="fa-solid fa-gem"></i> Jewelry
+          </span>
+          <img
+            src="https://m.media-amazon.com/images/I/71i4LgBuwxL._AC_SY535_.jpg"
+            alt="Jewelry and Accessories"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-meta">
+            <i class="fa-solid fa-star"></i> 5.0 &nbsp;•&nbsp; 421 reviews
+          </p>
+          <h3 class="blog-card-title">Jewelry & Accessories</h3>
+          <p class="blog-card-desc">Trendy fashion jewelry. Shine with timeless charm and elegance.</p>
+          <a href="https://musehubcreative.blogspot.com/2026/03/trending-jewelry-for-women.html" class="blog-read-more" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> View Deal
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 7 - Footwear -->
+      <article class="blog-card bc-1 reveal" aria-label="Footwear">
+        <div class="blog-img-wrap">
+          <span class="blog-cat-badge bg-orange">
+            <i class="fa-solid fa-shoe-prints"></i> Footwear
+          </span>
+          <img
+            src="https://m.media-amazon.com/images/I/61KbYXsPnwL._AC_SY695_.jpg"
+            alt="Footwear"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-meta">
+            <i class="fa-solid fa-star"></i> 4.8 &nbsp;•&nbsp; 198 reviews
+          </p>
+          <h3 class="blog-card-title">Footwear</h3>
+          <p class="blog-card-desc">Comfort & style combined. Step out with confidence every day.</p>
+          <a href="https://musehubcreative.blogspot.com/2026/04/best-footwear-for-women.html" class="blog-read-more" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> View Deal
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 8 - Fitness Wear -->
+      <article class="blog-card bc-2 reveal" aria-label="Fitness Wear">
+        <div class="blog-img-wrap">
+          <span class="blog-cat-badge bg-pink">
+            <i class="fa-solid fa-dumbbell"></i> Fitness
+          </span>
+          <img
+            src="https://m.media-amazon.com/images/I/81ZS9ZwbP2L._AC_SY741_.jpg"
+            alt="Fitness Wear"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-meta">
+            <i class="fa-solid fa-star"></i> 4.7 &nbsp;•&nbsp; 143 reviews
+          </p>
+          <h3 class="blog-card-title">Fitness Wear</h3>
+          <p class="blog-card-desc">Active & stylish outfits. Comfort for workouts and active days.</p>
+          <a href="https://musehubcreative.blogspot.com/2026/04/top-fitness-wear-for-women.html" class="blog-read-more" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> View Deal
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 9 - Hygiene -->
+      <article class="blog-card bc-3 reveal" aria-label="Personal Hygiene">
+        <div class="blog-img-wrap">
+          <span class="blog-cat-badge bg-violet">
+            <i class="fa-solid fa-pump-soap"></i> Hygiene
+          </span>
+          <img
+            src="https://m.media-amazon.com/images/I/71fNEk50kjL._SX679_.jpg"
+            alt="Personal Hygiene"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-meta">
+            <i class="fa-solid fa-star"></i> 4.9 &nbsp;•&nbsp; 287 reviews
+          </p>
+          <h3 class="blog-card-title">Personal Hygiene</h3>
+          <p class="blog-card-desc">Daily hygiene essentials. Stay fresh & confident all day long.</p>
+          <a href="https://musehubcreative.blogspot.com/2026/04/daily-hygiene-essentials.html" class="blog-read-more" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> View Deal
+          </a>
+        </div>
+      </article>
+
+      <!-- Item 10 - Office Essentials -->
+      <article class="blog-card bc-4 reveal" aria-label="Office Essentials">
+        <div class="blog-img-wrap">
+          <span class="blog-cat-badge bg-sky">
+            <i class="fa-solid fa-briefcase"></i> Office
+          </span>
+          <img
+            src="https://m.media-amazon.com/images/I/817VZ-ks71L._AC_SL1500_.jpg"
+            alt="Office Essentials for Women"
+            loading="lazy"
+          />
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-meta">
+            <i class="fa-solid fa-star"></i> 4.8 &nbsp;•&nbsp; 165 reviews
+          </p>
+          <h3 class="blog-card-title">Office Essentials for Women</h3>
+          <p class="blog-card-desc">Professional yet stylish essentials designed for modern working women.</p>
+          <a href="https://musehubcreative.blogspot.com/2026/03/office-essentials-for-women.html" class="blog-read-more" target="_blank" rel="noopener">
+            <i class="fa-solid fa-eye"></i> View Deal
+          </a>
+        </div>
+      </article>
+
+    </div><!-- /.blog-grid -->
+  </div>
+</section>
+<script>/* ============================================================
+   10. LIFESTYLE & BLOG CARD — tilt effect on desktop hover
+============================================================ */
+(function initCardTilt() {
+  const cards = document.querySelectorAll(
+    ".lifestyle-card, .blog-card, .cat-card"
+  );
+
+  /* Only on non-touch devices */
+  if (window.matchMedia("(hover: none)").matches) return;
+
+  cards.forEach(function (card) {
+    card.addEventListener("mousemove", function (e) {
+      const rect   = card.getBoundingClientRect();
+      const x      = (e.clientX - rect.left) / rect.width  - 0.5;
+      const y      = (e.clientY - rect.top)  / rect.height - 0.5;
+      const rotX   = -(y * 6).toFixed(2);
+      const rotY   =  (x * 6).toFixed(2);
+
+      card.style.transform =
+        "translateY(-8px) rotateX(" + rotX + "deg) rotateY(" + rotY + "deg) scale(1.02)";
+      card.style.transition = "transform 0.08s ease";
+    });
+
+    card.addEventListener("mouseleave", function () {
+      card.style.transform  = "";
+      card.style.transition = "transform 0.35s ease";
+    });
+  });
+})();</script>
