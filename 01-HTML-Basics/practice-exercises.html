@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML/CSS/JS Practice Exercises</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .exercise {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .exercise h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .hint {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .solution {
+            display: none;
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .show-solution {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="practice.html" class="btn">Back to Practice Page</a>
+            <a href="#" class="btn">Home</a>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <h1>HTML/CSS/JS Practice Exercises</h1>
+        <p>Complete these exercises to practice what you learned!</p>
+        
+        <!-- ==================== HTML EXERCISES ==================== -->
+        <h2>HTML Exercises</h2>
+        
+        <div class="exercise">
+            <h3>Exercise 1: Create a Heading</h3>
+            <p>Task: Create an h1 heading with your name</p>
+            <div class="hint">Hint: Use &lt;h1&gt;SYED MOIN&lt;/h1&gt;</div>
+            <div class="practice-area">
+                <!-- Write your code here -->
+                <h1>Syed Moin</h1>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 2: Create a Paragraph</h3>
+            <p>Task: Create a paragraph about your favorite hobby</p>
+            <div class="hint">Hint: Use &lt;p&gt;This is a paragraph about my favorite hobby.&lt;/p&gt;</div>
+            <div class="practice-area">
+                <!-- Write your code here -->
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut nobis unde ipsum odio ab inventore perspiciatis fuga perferendis veritatis doloribus. ipsum dolor sit amet consectetur adipiscing elit</p>
+                 <&lt;p&gt;I love reading books and learning new things.&lt;/p&gt;>
+
+                <p>I love coding and building websites!</p>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 3: Create a List</h3>
+            <p>Task: Create an unordered list with 3 items</p>
+            <div class="hint">Hint: Use &lt;ul&gt; and &lt;li&gt; tags</div>
+            <div class="practice-area">
+                <!-- Write your code here -->
+                <ul>
+                    <li>breakfast</li>
+                    <li>lunch</li>
+                    <li>dinner</li>
+                </ul>
+            </div>
+        </div>
+        <div class="exercise">
+            <h3>Exercise 4: Create a List</h3>
+            <p>Task: Create an ordered list with 3 items</p>
+            <div class="hint">Hint: Use &lt;ul&gt; and &lt;li&gt; tags</div>
+            <div class="practice-area">
+                <!-- Write your code here -->
+                <ol>
+                    <li>breakfast</li>
+                    <li>lunch</li>
+                    <li>dinner</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 5: Create a Link</h3>
+            <p>Task: Create a link to Google</p>
+            <div class="hint">Hint: Use &lt;a href="https://google.com"&gt;Google&lt;/a&gt;</div>
+            <div class="practice-area">
+                <!-- Write your code here -->
+                <a href="https://google.com">Visit Google</a>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 5: Create an Image</h3>
+            <p>Task: Add an image from Unsplash</p>
+            <div class="hint">Hint: Use &lt;img src="url" alt="description"&gt;</div>
+            <div class="practice-area">
+                <!-- Write your code here -->
+                <img src="https://images.unsplash.com/photo-1648538923547-074724ca7a18?w=600&auto=format&fit=crop&q=60" width="300" height="auto" alt="Nature">
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 6: Create a Form</h3>
+            <p>Task: Create a form with name and email fields</p>
+            <div class="hint">Hint: Use &lt;form&gt;, &lt;input&gt;, &lt;label&gt; tags</div>
+            <div class="practice-area">
+                <!-- Write your code here -->
+                <form>
+                    <label>Name: <input type="text" name="name" placeholder="Enter your name"></label><br>
+                    <label>Email: <input type="email" name="email" placeholder="Enter your email"></label>
+                </form>
+            </div>
+        </div>
+        
+        <!-- ==================== CSS EXERCISES ==================== -->
+        <h2>CSS Exercises</h2>
+        
+        <div class="exercise">
+            <h3>Exercise 7: Change Text Color</h3>
+            <p>Task: Make this text red using inline CSS</p>
+            <div class="hint">Hint: Use style="color: red;"</div>
+            <div class="practice-area">
+                <p style="color: rgb(0, 76, 255);">This text should be red</p>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 8: Change Background Color</h3>
+            <p>Task: Give this div a yellow background</p>
+            <div class="hint">Hint: Use style="background-color: yellow;"</div>
+            <div class="practice-area">
+                <div style="background-color: yellow; padding: 20px;">
+                    This div has yellow background
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 9: Add Border</h3>
+            <p>Task: Add a blue border to this div</p>
+            <div class="hint">Hint: Use style="border: 5px solid blue;"</div>
+            <div class="practice-area">
+                <div style="border: 2px solid blue; padding: 20px;">
+                    This div has a blue border
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 10: Change Font Size</h3>
+            <p>Task: Make this text 24px</p>
+            <div class="hint">Hint: Use style="font-size: 24px;"</div>
+            <div class="practice-area">
+                <p style="font-size: 24px;">This text is 24px</p>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 11: Add Padding</h3>
+            <p>Task: Add 20px padding to this div</p>
+            <div class="hint">Hint: Use style="padding: 30px;"</div>
+            <div class="practice-area">
+                <div style="background-color: lightgray; padding: 30px;">
+                    This div has 30px padding
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 12: Add Margin</h3>
+            <p>Task: Add 20px margin to this div</p>
+            <div class="hint">Hint: Use style="margin: 20px;"</div>
+            <div class="practice-area">
+                <div style="background-color: lightblue; margin: 20px; padding: 10px;">
+                    This div has 20px margin
+                </div>
+            </div>
+        </div>
+        
+        <!-- ==================== JAVASCRIPT EXERCISES ==================== -->
+        <h2>JavaScript Exercises (Practice Tomorrow)</h2>
+        
+        <div class="exercise">
+            <h3>Exercise 13: Alert Message</h3>
+            <p>Task: Create a button that shows an alert when clicked</p>
+            <div class="hint">Hint: Use onclick="alert('Hello!')"</div>
+            <div class="practice-area">
+                <button onclick="alert('Hello!')">Click Me</button>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 14: Change Text</h3>
+            <p>Task: Create a button that changes text when clicked</p>
+            <div class="hint">Hint: Use element.textContent = 'new text'</div>
+            <div class="practice-area">
+                <p id="demoText">Original Text</p>
+                <button onclick="document.getElementById('demoText').textContent = 'Changed!'">Change Text</button>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 15: Counter</h3>
+            <p>Task: Create a counter that increases when button is clicked</p>
+            <div class="hint">Hint: Use a variable and increment it</div>
+            <div class="practice-area">
+                <p>Count: <span id="count">0</span></p>
+                <button onclick="document.getElementById('count').textContent = parseInt(document.getElementById('count').textContent) + 1">Increase</button>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 16: Show Date</h3>
+            <p>Task: Display current date when button is clicked</p>
+            <div class="hint">Hint: Use new Date().toLocaleDateString()</div>
+            <div class="practice-area">
+                <p id="dateDisplay">Click button to see date</p>
+                <button onclick="document.getElementById('dateDisplay').textContent = new Date().toLocaleDateString()">Show Date</button>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 17: Toggle Visibility</h3>
+            <p>Task: Create a button to show/hide an element</p>
+            <div class="hint">Hint: Use style.display = 'none' or 'block'</div>
+            <div class="practice-area">
+                <p id="toggleText">This text can be hidden</p>
+                <button onclick="var el = document.getElementById('toggleText'); el.style.display = el.style.display === 'none' ? 'block' : 'none';">Toggle</button>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 18: Change Background Color</h3>
+            <p>Task: Create a button that changes page background color</p>
+            <div class="hint">Hint: Use document.body.style.backgroundColor</div>
+            <div class="practice-area">
+                <button onclick="document.body.style.backgroundColor = 'lightgreen'">Change Background</button>
+            </div>
+        </div>
+        
+        <!-- ==================== COMBINED EXERCISES ==================== -->
+        <h2>Combined HTML/CSS/JS Exercises</h2>
+        
+        <div class="exercise">
+            <h3>Exercise 19: Interactive Card</h3>
+            <p>Task: Create a card with title, description, and a like button</p>
+            <div class="hint">Hint: Combine HTML structure, CSS styling, and JS for button click</div>
+            <div class="practice-area">
+                <div style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; max-width: 300px;">
+                    <h3 style="margin-top: 0;">My Card</h3>
+                    <p>This is a beautiful card with interactive features.</p>
+                    <button onclick="this.textContent = this.textContent === '❤️ Like' ? '❤️ Liked!' : '❤️ Like'; this.style.background = this.textContent === '❤️ Liked!' ? 'red' : '';" style="padding: 10px 20px; cursor: pointer;">❤️ Like</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 20: Todo List</h3>
+            <p>Task: Create a simple todo list with add and delete functionality</p>
+            <div class="hint">Hint: Use array, functions, and DOM manipulation</div>
+            <div class="practice-area">
+                <input type="text" id="todoInput" placeholder="Add todo..." style="padding: 10px; margin-right: 10px;">
+                <button onclick="var input = document.getElementById('todoInput'); if(input.value) { var li = document.createElement('li'); li.textContent = input.value; document.getElementById('todoList').appendChild(li); input.value = ''; }" style="padding: 10px 20px;">Add</button>
+                <ul id="todoList" style="margin-top: 20px;"></ul>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 21: Color Picker</h3>
+            <p>Task: Create a color picker that changes text color</p>
+            <div class="hint">Hint: Use input type="color" and change event</div>
+            <div class="practice-area">
+                <input type="color" id="colorPicker" onchange="document.getElementById('colorText').style.color = this.value;" style="margin-right: 10px;">
+                <p id="colorText">This text changes color!</p>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <h3>Exercise 22: Calculator</h3>
+            <p>Task: Create a simple calculator with add and subtract</p>
+            <div class="hint">Hint: Use input fields and math operations</div>
+            <div class="practice-area">
+                <input type="number" id="num1" placeholder="Number 1" style="padding: 10px; width: 100px;">
+                <input type="number" id="num2" placeholder="Number 2" style="padding: 10px; width: 100px;">
+                <button onclick="document.getElementById('result').textContent = parseFloat(document.getElementById('num1').value) + parseFloat(document.getElementById('num2').value);" style="padding: 10px 20px;">Add</button>
+                <button onclick="document.getElementById('result').textContent = parseFloat(document.getElementById('num1').value) - parseFloat(document.getElementById('num2').value);" style="padding: 10px 20px;">Subtract</button>
+                <p>Result: <span id="result">0</span></p>
+            </div>
+        </div>
+        
+    </main>
+    
+    <footer class="container">
+        <p>&copy; 2026 Practice Exercises. Keep Learning!</p>
+    </footer>
+    
+    <script>
+        console.log('Practice exercises loaded!');
+        console.log('Complete each exercise to improve your skills!');
+    </script>
+</body>
+</html>

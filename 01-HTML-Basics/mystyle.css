@@ -1,0 +1,17 @@
+h1{
+    color: blue;
+    font-size: 30px;
+}
+h2{
+    color:black;
+    font-size: 26px;
+    text-align: center;
+    color: rgb(228, 33, 7);
+}
+table {
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid black;
+    padding: 15px;  
+}
