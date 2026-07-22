@@ -1,0 +1,1014 @@
+   
+
+
+<style>
+ 
+  /* ════════════════════════════════════
+   POLISHED DARK HERO BOX
+═══════════════════════════════════ */
+.hero-box{
+  width:100%;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#111827,#1f2937);
+  padding:20px 24px;
+  border-radius:16px;
+  color:#f9fafb;
+  box-shadow:0 12px 28px rgba(0,0,0,.45);
+  transition:transform .4s ease, box-shadow .4s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* subtle glow border */
+.hero-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:16px;
+  padding:2px;
+  background:linear-gradient(135deg,#f472b6,#a855f7,#3b82f6);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+
+/* hover lift */
+.hero-box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+
+/* title inside hero box */
+.hero-box h2{
+  font-size:1.4rem;
+  font-weight:700;
+  margin-bottom:.6rem;
+  background:linear-gradient(90deg,#f472b6,#a855f7,#3b82f6);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* description text */
+.hero-box p{
+  font-size:.95rem;
+  line-height:1.6;
+  color:#d1d5db;
+}
+
+  
+  
+  
+  
+  
+ 
+
+  /* ══════════════════════════════════════════
+   BASE
+══════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff5f8;font-family:'Nunito',sans-serif;overflow-x:hidden}
+
+/* ══════════════════════════════════════════
+   SCENE WRAPPER — Mesh Gradient + Full Screen Hero
+══════════════════════════════════════════ */
+.ws{
+  position:relative;
+  overflow:hidden;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse 65% 55% at  5%  0%, rgba(255,182,193,.6)  0%,transparent 52%),
+    radial-gradient(ellipse 55% 45% at 95%  8%, rgba(252,231,243,.75) 0%,transparent 50%),
+    radial-gradient(ellipse 50% 65% at 50%100%, rgba(245,208,254,.5)  0%,transparent 58%),
+    radial-gradient(ellipse 40% 40% at 80% 55%, rgba(255,220,180,.2)  0%,transparent 50%),
+    linear-gradient(155deg,#fff0f7 0%,#fde8f0 22%,#fdf4ff 52%,#fff5f0 78%,#fff0f8 100%);
+}
+
+ 
+
+/* ══════════════════════════════════════════
+   MAIN HERO GRID — FULL OVERLAY SYSTEM
+══════════════════════════════════════════ */
+.hero-grid{
+    position:relative;
+    width: 100%;
+    min-height:100vh;
+    display:grid;
+    grid-template-areas: "stack";
+}
+
+/* Image Background Section - Perfectly Full Stretch */
+.hero-img-panel{
+    grid-area: stack;
+    position:relative;
+    width:100%;
+    height:100%;
+    min-height: 100vh;
+    overflow:hidden;
+    z-index: 1;
+}
+
+/* Fixed from 40% height to 100% full height */
+.hero-img-panel img.bg-cover-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    display:block;
+    transition:transform .8s ease;
+}
+
+.hero-img-panel:hover img.bg-cover-image{
+    transform:scale(1.02);
+}
+
+/* Luxury Soft Rose Vignette Overlay (Text Visibility + High Colors) */
+.hero-img-panel::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(
+        135deg, 
+        rgba(44, 14, 27, 0.65) 0%, 
+        rgba(26, 10, 24, 0.5) 50%, 
+        rgba(41, 13, 33, 0.7) 100-percent
+    );
+    z-index:2;
+}
+
+/* ── FOREGROUND CONTENT PANEL ── */
+.hero-text-panel{
+    grid-area: stack;
+    z-index:4;
+    align-self: center;
+    justify-self: center;
+    width: 92%;
+    max-width: 950px;
+    text-align: center;
+    color: #fff;
+    padding: 3.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Welcome Pill */
+.htp-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:linear-gradient(135deg,#ff4e83,#f472b6,#bd59f6);
+  color:#fff;
+  border-radius:50px;
+  padding:9px 26px;
+  font-size:.8rem;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  box-shadow:0 8px 25px rgba(255, 78, 131, 0.4);
+  margin-bottom:1.5rem;
+  animation:pill-glow 3s ease-in-out infinite;
+}
+@keyframes pill-glow{
+  0%,100%{box-shadow:0 8px 25px rgba(255,78,131,.4)}
+  50%    {box-shadow:0 8px 35px rgba(189,89,246,.6)}
+}
+
+/* Vibrant Typography Styling */
+.htp-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:-0.5px;
+  margin-bottom:0.8rem;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.35);
+}
+.htp-h1 .t1{color:#ffffff}
+.htp-h1 .t2{
+  font-style:italic;
+  background:linear-gradient(90deg, #ff9ebb, #ffe27a, #f472b6);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  font-weight: 700;
+}
+.htp-h1 .t3{
+  color:#ffe4e6;
+  text-shadow: 0 0 15px rgba(255,182,193,0.5);
+}
+
+/* Script Line */
+.htp-script{
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.8rem, 3.8vw, 2.6rem);
+  color:#ffb3d1;
+  display:block;
+  margin-bottom:1.3rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  animation:script-sway 5s ease-in-out infinite;
+}
+@keyframes script-sway{
+  0%,100%{transform:rotate(-1deg)}
+  50%    {transform:rotate(1deg)}
+}
+
+/* Glassmorphic Description Box */
+.htp-subtitle-box{
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 24px;
+  padding: 1.4rem 2rem;
+  margin-bottom: 1.8rem;
+  max-width: 840px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+.htp-subtitle-box p{
+  color:#f9fafb;font-size:1.05rem;line-height:1.8;font-weight:600;
+}
+.htp-subtitle-box p span{
+  color:#ffe27a;
+  text-shadow: 0 0 10px rgba(255,226,122,0.3);
+  font-weight:800;
+}
+
+/* Tagline */
+.htp-tagline{
+  font-size:1rem;
+  color:#f3f4f6;
+  font-style:italic;
+  margin-bottom:1.8rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Colorful Tag Badges Stack */
+.htp-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.65rem;
+  margin-bottom:2.2rem;
+  justify-content:center;
+  max-width: 850px;
+}
+.htp-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 17px;border-radius:50px;
+  font-size:.82rem;font-weight:800;
+  color:#ffffff;
+  border:1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition:.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor:default;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Dynamic Colorful Themes for tags */
+.htp-tag.t-pink{background: rgba(244, 114, 182, 0.28); border-color: rgba(244, 114, 182, 0.5);}
+.htp-tag.t-purple{background: rgba(192, 132, 252, 0.28); border-color: rgba(192, 132, 252, 0.5);}
+.htp-tag.t-gold{background: rgba(253, 230, 138, 0.25); border-color: rgba(253, 230, 138, 0.5); color: #fffde6;}
+.htp-tag.t-mint{background: rgba(52, 211, 153, 0.25); border-color: rgba(52, 211, 153, 0.5);}
+.htp-tag.t-blue{background: rgba(96, 165, 250, 0.28); border-color: rgba(96, 165, 250, 0.5);}
+
+.htp-tag:hover{
+    transform:translateY(-4px) scale(1.06);
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 20px rgba(255, 158, 187, 0.4);
+    color: #fff;
+}
+
+/* Call to Action Buttons */
+.htp-btns{
+  display:flex;gap:1.3rem;flex-wrap:wrap;
+  margin-bottom:2.2rem;
+  justify-content:center;
+}
+.hbtn{
+  display:inline-flex;align-items:center;gap:8px;
+  border-radius:50px;padding:15px 35px;
+  font-family:'Nunito',sans-serif;font-size:.98rem;font-weight:900;
+  text-decoration:none;border:none;cursor:pointer;transition:.3s;
+}
+.hbtn-solid{
+  background:linear-gradient(135deg,#ff4e83,#f472b6,#a855f7);
+  color:#fff;box-shadow:0 8px 28px rgba(255,78,131,.45);
+  background-size:200% auto;animation:btn-move 4s linear infinite;
+}
+@keyframes btn-move{0%{background-position:0%}100%{background-position:200%}}
+.hbtn-solid:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 14px 36px rgba(255, 78, 131, 0.6)}
+
+.hbtn-outline{
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  border:2px solid rgba(255,255,255,.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.hbtn-outline:hover{
+    background:rgba(255,255,255,.3);
+    border-color:rgba(255,255,255,.7);
+    transform:translateY(-3px);
+}
+
+/* Floating Image Badges */
+.img-badge{
+  position:absolute;bottom:35px;left:35px;z-index:5;
+  background:rgba(255, 255, 255, 0.94);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border:1.5px solid rgba(255, 78, 131, 0.3);
+  border-radius:18px;padding:14px 20px;
+  box-shadow:0 10px 30px rgba(244,114,182,0.25);
+}
+.img-badge-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;font-weight:700;color:#9d174d;
+  margin-bottom:.2rem;
+}
+.img-badge-sub{font-size:.78rem;color:#be185d;font-weight:700}
+.img-badge-dots{display:flex;gap:6px;margin-top:9px;}
+.img-dot{width:8px;height:8px;border-radius:50%;animation:dot-pulse 2s ease-in-out infinite;}
+.img-dot:nth-child(1){background:#ff4e83;animation-delay:0s}
+.img-dot:nth-child(2){background:#a855f7;animation-delay:-.4s}
+.img-dot:nth-child(3){background:#34d399;animation-delay:-.8s}
+.img-dot:nth-child(4){background:#fbbf24;animation-delay:-1.2s}
+.img-dot:nth-child(5){background:#60a5fa;animation-delay:-1.6s}
+@keyframes dot-pulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.4);opacity:1}}
+
+/* Circle Photo Grid Hooks */
+.mini-photos{
+  position:absolute;top:35px;right:35px;z-index:5;
+  display:flex;flex-direction:column;gap:14px;
+}
+.mini-ph{
+  width:64px;height:64px;border-radius:50%;
+  border:3px solid #fff;overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  transition:.3s;animation:mini-float var(--mf,5s) var(--md,0s) ease-in-out infinite;
+}
+.mini-ph:hover{transform:scale(1.18);border-color:#ff4e83;box-shadow:0 8px 25px rgba(255,78,131,0.4)}
+@keyframes mini-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.mini-ph img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ══════════════════════════════════════════
+   SCROLL REVEAL TRIGGERS
+══════════════════════════════════════════ */
+.wr{opacity:0;transform:translateY(25px);transition:opacity .75s cubic-bezier(0.215, 0.610, 0.355, 1), transform .75s cubic-bezier(0.215, 0.610, 0.355, 1)}
+.wr.in{opacity:1;transform:translateY(0)}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE DESIGN BREAKPOINTS
+══════════════════════════════════════════ */
+@media(max-width:900px){
+  .mini-photos, .img-badge{display:none}
+  .hero-text-panel{padding:2.5rem 1rem; width: 95%;}
+  .htp-h1{font-size:clamp(2.2rem, 7.5vw, 3.5rem)}
+}
+@media(max-width:480px){
+  .htp-btns{flex-direction:column; width:100%}
+  .hbtn{justify-content:center; width:100%}
+}
+  
+  /* ════════════════════════════════════
+   POLISHED SECTION SUBHEAD
+═══════════════════════════════════ */
+.w-section-head{
+  text-align:center;
+  padding:2.2rem 5vw 2.5rem;
+  position:relative;
+  z-index:2;
+}
+
+.w-section-head h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4.5vw,3rem);
+  font-weight:700;
+  color:#831843;
+  margin-bottom:.8rem;
+  line-height:1.2;
+  background:linear-gradient(90deg,#db2777,#f472b6,#a855f7);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 3px 14px rgba(244,114,182,.25);
+  animation:shine-text 6s linear infinite;
+}
+@keyframes shine-text{
+  0%{background-position:0%}
+  100%{background-position:200%}
+}
+
+.w-section-head p{
+  color:#6b7280;
+  font-size:1.05rem;
+  line-height:1.7;
+  max-width:720px;
+  margin:0 auto 1.2rem;
+  font-weight:600;
+}
+
+.w-section-line{
+  width:100px;
+  height:5px;
+  border-radius:4px;
+  background:linear-gradient(90deg,#f7608a,#a855f7,#fbcfe8);
+  margin:1rem auto 0;
+  box-shadow:0 4px 12px rgba(168,85,247,.35);
+  animation:line-glow 3s ease-in-out infinite;
+}
+@keyframes line-glow{
+  0%,100%{box-shadow:0 4px 12px rgba(168,85,247,.35)}
+  50%    {box-shadow:0 6px 18px rgba(244,114,182,.55)}
+}
+
+  
+ /* ══════════════════════════════════════════
+   WOMEN'S SECTION LIFESTYLE CARDS
+══════════════════════════════════════════ */
+.w-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.wc {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  cursor: pointer;
+}
+.wc:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+}
+
+/* Image */
+.wc-img-wrap {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+.wc-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease, filter 0.6s ease;
+  filter: brightness(0.85);
+}
+.wc:hover .wc-img-wrap img {
+  transform: scale(1.08);
+  filter: brightness(1);
+}
+
+/* Overlay Gradient */
+.wc-img-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.2));
+  transition: background 0.6s ease;
+}
+.wc:hover .wc-img-wrap::after {
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.25));
+}
+
+/* Floating Emoji */
+.wc-efloat {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 1.4rem;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+.wc:hover .wc-efloat {
+  transform: translateY(-3px);
+}
+
+/* Body Content */
+.wc-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1.2rem 1.2rem 4.5rem 1.2rem;
+  z-index: 2;
+  color: #fff;
+  transform: translateY(15px);
+  opacity: 0.9;
+  transition: all 0.6s ease;
+}
+.wc:hover .wc-body {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Chip */
+.wc-chip {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+  background: rgba(255,255,255,0.15);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+/* Title */
+.wc-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #fff 0%, #fbcfe8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Description */
+.wc-desc {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #f3f4f6;
+}
+
+/* Footer */
+.wc-foot {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+  z-index: 2;
+}
+
+/* CTA Button */
+.wc-btn {
+  padding: 8px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff4e83, #bd59f6);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  transition: all 0.4s ease;
+}
+.wc-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+}
+
+/* Heart */
+.wc-heart {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.wc-heart:hover {
+  transform: scale(1.2);
+}
+  
+  
+  
+  
+  
+  /* ════════════════════════════════════
+   BOTTOM CTA POLISH
+═══════════════════════════════════ */
+.w-cta{
+  background:linear-gradient(135deg,#fff0f7,#fdf4ff);
+  padding:2.5rem 5vw;
+  text-align:center;
+  border-radius:28px;
+  box-shadow:0 12px 40px rgba(247,96,138,.25);
+  margin:2rem auto;
+  max-width:1100px;
+}
+
+.w-cta-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.8rem,4vw,2.6rem);
+  font-weight:700;
+  margin-bottom:.6rem;
+  background:linear-gradient(90deg,#db2777,#f472b6,#a855f7);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 2px 12px rgba(244,114,182,.25);
+}
+
+.w-cta-sub{
+  font-size:1.05rem;
+  color:#6b7280;
+  line-height:1.7;
+  max-width:680px;
+  margin:0 auto 1.6rem;
+  font-weight:600;
+}
+
+.w-cta-btns{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  justify-content:center;
+}
+
+.wcta-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 28px;
+  border-radius:50px;
+  font-size:.9rem;
+  font-weight:800;
+  text-decoration:none;
+  transition:.3s ease;
+}
+
+.wcta-btn.solid{
+  background:linear-gradient(135deg,#ff4e83,#bd59f6);
+  color:#fff;
+  box-shadow:0 6px 20px rgba(189,89,246,.35);
+}
+.wcta-btn.solid:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 28px rgba(189,89,246,.55);
+}
+
+.wcta-btn.outline{
+  border:2px solid #db2777;
+  color:#db2777;
+  background:#fff;
+}
+.wcta-btn.outline:hover{
+  background:#db2777;
+  color:#fff;
+  transform:translateY(-3px) scale(1.05);
+}
+
+/* ════════════════════════════════════
+   AFFILIATE DISCLOSURE POLISH
+═══════════════════════════════════ */
+.w-disc{
+  max-width:900px;
+  margin:2rem auto;
+  background:#fff;
+  border-radius:22px;
+  padding:2rem;
+  box-shadow:0 8px 28px rgba(0,0,0,.08);
+  text-align:center;
+  border:1.5px solid rgba(247,96,138,.25);
+}
+
+.w-disc h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;
+  font-weight:700;
+  margin-bottom:.8rem;
+  color:#c93a68;
+}
+
+.w-disc p{
+  font-size:.95rem;
+  line-height:1.65;
+  color:#4b5563;
+  max-width:700px;
+  margin:0 auto;
+}
+
+</style>
+<body>
+ 
+
+
+
+ 
+  <!-- ══ SECTION SUBHEAD ══ -->
+  <div class="w-section-head wr">
+    <h2>Her Fashion Hub</h2>
+    <h3>Click any card to explore — all links go directly to our curated blog pages &amp; Amazon picks</h3>
+    <div class="w-section-line"></div>
+  </div>
+
+  <!-- ══ CARDS GRID ══ -->
+  <div class="w-grid">
+
+    <!-- 1 SKINCARE -->
+    <div class="wc t-skin wr">
+      <div class="wc-bar"></div>
+      <div class="wc-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/71C6q7KIZhL._AC_SX679_.jpg" alt="Top Tank"/>
+        <span class="wc-efloat">🌸</span>
+      </div>
+      <div class="wc-body">
+        <span class="wc-chip"> Sleeveless Tank Top</span>
+        <h3 class="wc-name">Sleeveless Split Side Tie Tank Top</h3>
+        
+         
+        <p class="cat-desc">Design: Lace tops for women, sleeveless ruffle crop tank tops for women y2k, square neck, sheer lace patchwork, ruffle trim, frill, side tie, cropped length, sheer lace trim tank shirt, stylish design.</p>
+      </div>
+      <div class="wc-foot">
+        <a class="wc-btn" href="https://amzn.to/4vh8Qvi" target="_blank" rel="noopener">🔍 View Details</a>
+        <div class="wc-heart" onclick="toggleHeart(this)">🤍</div>
+      </div>
+    </div>
+
+    <!-- 2 HAIR CARE -->
+    <div class="wc t-hair wr">
+      <div class="wc-bar"></div>
+      <div class="wc-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/716HQyeHgjL._AC_SX679_.jpg" alt="Item 2"/>
+        <span class="wc-efloat">💚</span>
+      </div>
+      <div class="wc-body">
+        <span class="wc-chip"> Scoop Neck Tank Top</span>
+        <h3 class="wc-name">Women's Slim-Fit Scoop Neck Tank Top</h3>
+        <p class="wc-desc">SLIM FIT: Fitted to the body through the shoulders, body and sleeves
+RIBBED COTTON BLEND: Breathable cotton with gentle stretch for comfortable, everyday wear.</p>
+      </div>
+      <div class="wc-foot">
+        <a class="wc-btn" href="https://musehubcreative.blogspot.com/2026/03/hair-care-products.html" target="_blank" rel="noopener">🔍 View Details</a>
+        <div class="wc-heart" onclick="toggleHeart(this)">🤍</div>
+      </div>
+    </div>
+
+    <!-- 3 MAKEUP -->
+    <div class="wc t-makeup wr">
+      <div class="wc-bar"></div>
+      <div class="wc-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/81SkC1M1GFL._AC_SY741_.jpg" alt="Item 3"/>
+        <span class="wc-efloat">💄</span>
+      </div>
+      <div class="wc-body">
+        <span class="wc-chip">Maxi Skirts</span>
+        <h3 class="wc-name">Women's polka dot maxi skirts</h3>
+        <p class="wc-desc">Soft Layered Fabric: Women's polka dot maxi skirts use a polyester and elastane shell for ultra soft, stretchy comfort with gentle wave-like flow.</p>
+      </div>
+      <div class="wc-foot">
+        <a class="wc-btn" href="https://amzn.to/3RHcvUP" target="_blank" rel="noopener">🔍 View Details</a>
+        <div class="wc-heart" onclick="toggleHeart(this)">🤍</div>
+      </div>
+    </div>
+
+    <!-- 4 COMFORT WEAR -->
+    <div class="wc t-comfort wr">
+      <div class="wc-bar"></div>
+      <div class="wc-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/71bVDNejgML._AC_SY741_.jpg" alt="Comfort Wear for Home"/>
+        <span class="wc-efloat">🏠</span>
+      </div>
+      <div class="wc-body">
+        <span class="wc-chip">Comfort Wear</span>
+        <h3 class="wc-name">Triangle String Bikini</h3>
+        <p class="wc-desc">: String bikini sets for women with removable chest padded, halter sexy triangle bikini top with brazilian cheeky bikini bottom.</p>
+      </div>
+      <div class="wc-foot">
+        <a class="wc-btn" href="https://amzn.to/4o3uj8J" target="_blank" rel="noopener">🔍 View Details</a>
+        <div class="wc-heart" onclick="toggleHeart(this)">🤍</div>
+      </div>
+    </div>
+
+    <!-- 5 HANDBAGS -->
+    <div class="wc t-bag wr">
+      <div class="wc-bar"></div>
+      <div class="wc-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/81NxS6R9F7L._AC_SX569_.jpg" alt="Item 1"/>
+        <span class="wc-efloat">👜</span>
+      </div>
+      <div class="wc-body">
+        <span class="wc-chip">Sleepwear Set</span>
+        <h3 class="wc-name">Pajamas Set for Women</h3>
+        <p class="wc-desc">Stylish Pajamas Set for Women Short Sleeve Sleepwear Button Down Pjs Soft 2 Piece.</p>
+      </div>
+      <div class="wc-foot">
+        <a class="wc-btn" href="https://amzn.to/433vhYZ" target="_blank" rel="noopener">🔍 View Details</a>
+        <div class="wc-heart" onclick="toggleHeart(this)">🤍</div>
+      </div>
+    </div>
+
+    <!-- 6 JEWELRY -->
+    <div class="wc t-jewel wr">
+      <div class="wc-bar"></div>
+      <div class="wc-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/71YW1sKSfiL._AC_SX679_.jpg" alt="Accessories"/>
+        <span class="wc-efloat">💍</span>
+      </div>
+      <div class="wc-body">
+        <span class="wc-chip">Underwear</span>
+        <h3 class="wc-name">G-String Thong Underwear</h3>
+        <p class="wc-desc">Gentle against the skin with decorative edges and added stretch for comfort.</p>
+      </div>
+      <div class="wc-foot">
+        <a class="wc-btn" href="https://amzn.to/43MBEQt" target="_blank" rel="noopener">🔍 View Details</a>
+        <div class="wc-heart" onclick="toggleHeart(this)">🤍</div>
+      </div>
+    </div>
+
+    <!-- 7 FOOTWEAR -->
+    <div class="wc t-foot wr">
+      <div class="wc-bar"></div>
+      <div class="wc-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/81-yTxKhuUL._AC_SY741_.jpg" alt="MAXI wear"/>
+        <span class="wc-efloat">👠</span>
+      </div>
+      <div class="wc-body">
+        <span class="wc-chip">Casual Dress</span>
+        <h3 class="wc-name">Crewneck Maxi Long</h3>
+        <p class="wc-desc">This timeless maxi dress features a soft crew neck and cap sleeves that cover arms gently,
+          with a flowing curved hem that skims your figure.</p>
+      </div>
+      <div class="wc-foot">
+        <a class="wc-btn" href="https://amzn.to/4vrbdMj" target="_blank" rel="noopener">🔍 View Details</a>
+        <div class="wc-heart" onclick="toggleHeart(this)">🤍</div>
+      </div>
+    </div>
+
+    <!-- 8 FITNESS WEAR -->
+    <div class="wc t-fit wr">
+      <div class="wc-bar"></div>
+      <div class="wc-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/81lD+zBNsoL._AC_SX569_.jpg" alt="Tops Wear"/>
+        <span class="wc-efloat">🏃</span>
+      </div>
+      <div class="wc-body">
+        <span class="wc-chip">Womens Tops</span>
+        <h3 class="wc-name">Spring Summer Fashion 2026 Tops</h3>
+        <p class="wc-desc">Womens 3/4 sleeve tops are suitable for wear with jeans, leggings, pants,
+          skirts, sweatpants and shorts in in spring, summer.</p>
+      </div>
+      <div class="wc-foot">
+        <a class="wc-btn" href="https://amzn.to/43auBAY" target="_blank" rel="noopener">🔍 View Details</a>
+        <div class="wc-heart" onclick="toggleHeart(this)">🤍</div>
+      </div>
+    </div>
+
+    <!-- 9 PERSONAL HYGIENE -->
+    <div class="wc t-hyg wr">
+      <div class="wc-bar"></div>
+      <div class="wc-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/4196YiZsN2L._AC_SX679_.jpg" alt="Flowy Palazzo"/>
+        <span class="wc-efloat">🛁</span>
+      </div>
+      <div class="wc-body">
+        <span class="wc-chip">Women Palazzo Pants</span>
+        <h3 class="wc-name">Wide Leg Pants for Women High Waisted Palazzo</h3>
+        <p class="wc-desc">Made from soft and breathable fabric, these lightweight summer pants keep you cool and comfortable all day.</p>
+      </div>
+      <div class="wc-foot">
+        <a class="wc-btn" href="https://amzn.to/43X81w0" target="_blank" rel="noopener">🔍 View Details</a>
+        <div class="wc-heart" onclick="toggleHeart(this)">🤍</div>
+      </div>
+    </div>
+
+    <!-- 10 OFFICE ESSENTIALS -->
+    <div class="wc t-office wr">
+      <div class="wc-bar"></div>
+      <div class="wc-img-wrap">
+        <img src="https://m.media-amazon.com/images/I/616bCnT+0SL._AC_SX679_.jpg" alt="Barsfor Women"/>
+        <span class="wc-efloat">💼</span>
+      </div>
+      <div class="wc-body">
+        <span class="wc-chip">Bras for Women</span>
+        <h3 class="wc-name">High Supportive Jelly Bras for Women</h3>
+        <p class="wc-desc"> offering a maximum support and reducing breast movement during workouts or daily activities.</p>
+      </div>
+      <div class="wc-foot">
+        <a class="wc-btn" href="https://amzn.to/4aarpJt" target="_blank" rel="noopener">🔍 View Details</a>
+        <div class="wc-heart" onclick="toggleHeart(this)">🤍</div>
+      </div>
+    </div>
+
+  </div><!-- /w-grid -->
+
+  
+  
+  <!-- ══ BOTTOM CTA ══ -->
+  <div class="w-cta wr">
+    <div class="w-cta-inner">
+      <div class="w-cta-txt">
+        <div class="w-cta-title">Shop Exclusive Deals for Her 💖</div>
+        <p class="w-cta-sub">All products are handpicked for modern women — click any card to explore more!</p>
+      </div>
+      <div class="w-cta-btns">
+        <a class="wcta-btn solid" href="https://musehubcreative.blogspot.com/p/her-essentials.html" target="_blank" rel="noopener">⬅ Previous</a>
+        <a class="wcta-btn solid" href="/" target="_blank">🌸 Next ➡</a>
+      </div>
+    </div>
+ 
+  </div>
+  
+
+  <!-- ══ AFFILIATE DISCLOSURE ══ -->
+  <div class="w-disc wr">
+    <h3>⭐ Affiliate Disclosure</h3>
+    <p>As an Amazon Associate, I earn from qualifying purchases. This means if you buy through links in this post, I may earn a small commission at no extra cost to you. Thank you for your support! 🌸</p>
+  </div>
+
+</body>
+<script>
+/* Intersection Observer Scroll Reveal Engine */
+(function(){
+  var els = document.querySelectorAll('.wr');
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ 
+          e.target.classList.add('in'); 
+          obs.unobserve(e.target); 
+      }
+    });
+  },{threshold:.05});
+  els.forEach(function(el){ obs.observe(el); });
+
+  setTimeout(function(){
+    els.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if(r.top < window.innerHeight) el.classList.add('in');
+    });
+  }, 100);
+})();
+
+/* Procedural Particle Engine Configuration */
+(function(){
+  var bg = document.getElementById('wsBg');
+  if(!bg) return;
+
+  var petals  = ['🌸','🌺','🌼','🌷','💐','🪷','🌻','💮','🏵️','✿'];
+  var sparkC  = ['#fbaac4','#f0abfc','#fde68a','#86efac','#a5b4fc','#fbcfe8'];
+  var ribbonG = [
+    'linear-gradient(90deg,rgba(251,170,196,.4),transparent)',
+    'linear-gradient(90deg,rgba(240,171,252,.35),transparent)',
+    'linear-gradient(90deg,rgba(253,230,138,.35),transparent)'
+  ];
+
+  function mkFlower(sz,c1,c2){
+    var d=document.createElement('div');
+    d.className='wf';
+    d.innerHTML='<svg width="'+sz+'" height="'+sz+'" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="translate(50,50)"><circle r="20" fill="'+c1+'" opacity=".4"/><ellipse rx="10" ry="24" fill="'+c2+'" opacity=".7" transform="rotate(45)"/><ellipse rx="10" ry="24" fill="'+c1+'" opacity=".7" transform="rotate(135)"/><circle r="7" fill="#fff"/></g></svg>';
+    return d;
+  }
+  
+  var fd=[{c1:'#fbaac4',c2:'#f9a8d4',s:40},{c1:'#f0abfc',c2:'#e879f9',s:30},{c1:'#fde68a',c2:'#fbbf24',s:35}];
+  for(var i=0;i<12;i++){
+    var f=fd[i%fd.length];
+    var el=mkFlower(f.s,f.c1,f.c2);
+    el.style.cssText='left:'+(Math.random()*100)+'%;top:'+(10+Math.random()*80)+'%;--d:'+(10+Math.random()*10)+'s;--dl:-'+(Math.random()*12)+'s';
+    bg.appendChild(el);
+  }
+
+  for(var j=0;j<20;j++){
+    var pe=document.createElement('div');
+    pe.className='pt';
+    pe.textContent=petals[j%petals.length];
+    pe.style.cssText=[
+      'left:'+(Math.random()*100)+'%',
+      'top:'+(5+Math.random()*90)+'%',
+      '--s:'+(1+Math.random()*1.3)+'rem',
+      '--d:'+(9+Math.random()*10)+'s',
+      '--dl:-'+(Math.random()*12)+'s',
+      '--tx:'+(Math.random()*50-25)+'px',
+      '--ty:-'+(50+Math.random()*60)+'px',
+      '--tr:'+(Math.random()*360-180)+'deg',
+    ].join(';');
+    bg.appendChild(pe);
+  }
+
+  for(var k=0;k<25;k++){
+    var sp=document.createElement('div');
+    sp.className='sk';
+    sp.style.cssText=[
+      'left:'+(Math.random()*100)+'%',
+      'top:'+(Math.random()*100)+'%',
+      '--c:'+sparkC[k%sparkC.length],
+      '--w:'+(3+Math.random()*5)+'px',
+      '--d:'+(2+Math.random()*4)+'s',
+      '--dl:-'+(Math.random()*5)+'s',
+    ].join(';');
+    bg.appendChild(sp);
+  }
+
+  for(var r=0;r<6;r++){
+    var rb=document.createElement('div');
+    rb.className='rv';
+    rb.style.cssText=[
+      'left:'+(Math.random()*80)+'%',
+      'top:'+(Math.random()*100)+'%',
+      'background:'+ribbonG[r%ribbonG.length],
+      '--r:'+(Math.random()*30-15)+'deg',
+      '--d:'+(7+Math.random()*7)+'s',
+      '--dl:-'+(Math.random()*8)+'s',
+    ].join(';');
+    bg.appendChild(rb);
+  }
+})();
+</script>
+ 
