@@ -1,552 +1,552 @@
- <!DOCTYPE html>
-<!--
-  MuseHub Creative — index.html
-  Standalone complete homepage
-  Linked: styles.css | script.js | Font Awesome CDN | Google Fonts (in CSS)
--->
+ <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MuseHub Creative — Cookbooks, Romance Books, Kids' Stories, Creative Journals and Lifestyle Essentials to inspire your daily creativity." />
-  <meta name="keywords" content="cookbooks, romance books, kids stories, creative journals, lifestyle essentials, women essentials" />
-  <meta property="og:title" content="MuseHub Creative — Inspires You" />
-  <meta property="og:description" content="A curated creative boutique for inspired daily living." />
-  <meta property="og:type" content="website" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Cheat Sheet</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        color: #222;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #4f46e5;
+        border-bottom: 3px solid #4f46e5;
+        padding-bottom: 10px;
+      }
+      h2 {
+        color: #4f46e5;
+        margin-top: 30px;
+        border-left: 4px solid #f59e0b;
+        padding-left: 10px;
+      }
+      .section {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      }
+      code {
+        background: #1e1e1e;
+        color: #a6e22e;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-family: monospace;
+      }
+      pre {
+        background: #1e1e1e;
+        color: #a6e22e;
+        padding: 16px;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      th {
+        background: #4f46e5;
+        color: white;
+        padding: 10px;
+        text-align: left;
+      }
+      td {
+        padding: 9px 10px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      tr:nth-child(even) td {
+        background: #f9fafb;
+      }
+      .tag {
+        color: #f59e0b;
+        font-weight: bold;
+        font-family: monospace;
+      }
+      .note {
+        background: #fffbeb;
+        border: 1px solid #f59e0b;
+        border-radius: 6px;
+        padding: 10px 14px;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HTML Basic Cheat Sheet</h1>
 
-  <title>MuseHub Creative — Inspires You</title>
+    <!-- ========== BASIC STRUCTURE ========== -->
+    <div class="section">
+      <h2>1. Basic HTML Structure</h2>
+      <pre>
+&lt;!DOCTYPE html&gt;          &lt;!-- Batata hai ki yeh HTML5 page hai --&gt;
+&lt;html&gt;                    &lt;!-- HTML document shuru hota hai --&gt;
+  &lt;head&gt;                  &lt;!-- Page ki info (title, CSS, etc.) --&gt;
+    &lt;title&gt;Mera Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;                  &lt;!-- Jo dikhega woh yahan likhein --&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre
+      >
+      <div class="note">
+        Tip: VS Code mein <strong>!</strong> type karke
+        <strong>Tab</strong> dabao — poora structure auto-fill ho jaata hai!
+      </div>
+    </div>
 
-  <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-<style>
-     
-    /* ============================================================
-   MuseHub Creative — styles.css
-   Modern premium design | Fully responsive | Complete styles
-   ============================================================ */
+    <!-- ========== HEADINGS ========== -->
+    <div class="section">
+      <h2>2. Headings (H1 se H6)</h2>
+      <pre>
+&lt;h1&gt;Sabse bada Heading&lt;/h1&gt;
+&lt;h2&gt;Thoda chhota&lt;/h2&gt;
+&lt;h3&gt;Aur chhota&lt;/h3&gt;
+&lt;h4&gt;H4&lt;/h4&gt;
+&lt;h5&gt;H5&lt;/h5&gt;
+&lt;h6&gt;Sabse chhota Heading&lt;/h6&gt;</pre
+      >
+      <div class="note">
+        Rule: Ek page mein sirf ek <code>&lt;h1&gt;</code> hona chahiye. Baaki
+        sub-headings ke liye h2, h3 use karein.
+      </div>
+    </div>
 
-/* ── Google Fonts ── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+    <!-- ========== PARAGRAPHS & TEXT ========== -->
+    <div class="section">
+      <h2>3. Paragraphs aur Text Formatting</h2>
+      <pre>
+&lt;p&gt;Yeh ek paragraph hai.&lt;/p&gt;
 
-/* ── CSS Custom Properties ── */
-:root {
-  /* Brand palette - Women's Colors */
-  --primary:    #e91e63;
-  --primary-lt: #f48fb1;
-  --secondary:  #9c27b0;
-  --accent:     #ff4081;
-  --orange:     #f97316;
-  --yellow:     #facc15;
-  --green:      #10b981;
-  --teal:       #14b8a6;
-  --sky:        #0ea5e9;
-  --fuchsia:    #d946ef;
+&lt;p&gt;Yeh &lt;b&gt;bold&lt;/b&gt; text hai.&lt;/p&gt;
+&lt;p&gt;Yeh &lt;i&gt;italic&lt;/i&gt; text hai.&lt;/p&gt;
+&lt;p&gt;Yeh &lt;u&gt;underline&lt;/u&gt; text hai.&lt;/p&gt;
+&lt;p&gt;Yeh &lt;strong&gt;important bold&lt;/strong&gt; text hai.&lt;/p&gt;
+&lt;p&gt;Yeh &lt;em&gt;emphasized italic&lt;/em&gt; text hai.&lt;/p&gt;
+&lt;p&gt;Yeh &lt;mark&gt;highlighted&lt;/mark&gt; text hai.&lt;/p&gt;
+&lt;p&gt;2&lt;sup&gt;3&lt;/sup&gt; = 8  (superscript)&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O  (subscript)&lt;/p&gt;
 
-  /* Neutrals */
-  --text:       #0f0f1a;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
-  --white:      #ffffff;
-  --bg:         #fdf2f8;
-  --card-bg:    #ffffff;
+&lt;br&gt;   &lt;!-- Line break (nayi line) --&gt;
+&lt;hr&gt;   &lt;!-- Horizontal line (separator) --&gt;</pre
+      >
+    </div>
 
-  /* Radii */
-  --r-sm:  10px;
-  --r-md:  16px;
-  --r-lg:  24px;
-  --r-xl:  32px;
-  --r-2xl: 40px;
-  --r-full: 9999px;
+    <!-- ========== LINKS ========== -->
+    <div class="section">
+      <h2>4. Links (Anchor Tag)</h2>
+      <pre>
+&lt;!-- Normal link --&gt;
+&lt;a href="https://google.com"&gt;Google par jaen&lt;/a&gt;
 
-  /* Shadows */
-  --shadow-xs: 0 1px 3px rgba(0,0,0,.06);
-  --shadow-sm: 0 4px 12px rgba(0,0,0,.08);
-  --shadow-md: 0 8px 28px rgba(0,0,0,.10);
-  --shadow-lg: 0 20px 50px rgba(0,0,0,.14);
-  --shadow-xl: 0 32px 64px rgba(0,0,0,.18);
+&lt;!-- Naye tab mein khole --&gt;
+&lt;a href="https://google.com" target="_blank"&gt;Google (naya tab)&lt;/a&gt;
 
-  /* Transition */
-  --ease: .28s cubic-bezier(.4,0,.2,1);
-}
+&lt;!-- Email link --&gt;
+&lt;a href="mailto:aap@example.com"&gt;Email karein&lt;/a&gt;
 
-/* ── Reset ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body {
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--text);
-  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%);
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-img { display: block; max-width: 100%; }
-a { text-decoration: none; color: inherit; transition: color var(--ease); }
-ul { list-style: none; }
-button { cursor: pointer; border: none; background: none; font-family: inherit; }
-address { font-style: normal; }
+&lt;!-- Phone link --&gt;
+&lt;a href="tel:+911234567890"&gt;Call karein&lt;/a&gt;
 
-/* ── Typography ── */
-h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+&lt;!-- Same page ka koi section --&gt;
+&lt;a href="#section1"&gt;Section 1 par jaen&lt;/a&gt;</pre
+      >
+      <table>
+        <tr>
+          <th>Attribute</th>
+          <th>Kaam</th>
+        </tr>
+        <tr>
+          <td><code>href</code></td>
+          <td>Link ka address</td>
+        </tr>
+        <tr>
+          <td><code>target="_blank"</code></td>
+          <td>Naye tab mein kholo</td>
+        </tr>
+        <tr>
+          <td><code>title</code></td>
+          <td>Hover par tooltip dikhao</td>
+        </tr>
+      </table>
+    </div>
 
-/* ── Container ── */
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-  
-  
-  
-  
-  
-    /* ========================================================
-   TRENDING BLOG POSTS
-======================================================== */
-#blog {
-  padding: 6rem 0;
-  position: relative;
-  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%);
-  overflow: hidden;
-}
-.blog-bg-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  pointer-events: none;
-}
-.bb-pink {
-  width: 320px; height: 320px;
-  background: rgba(236,72,153,.18);
-  top: 4rem; right: 4rem;
-}
-.bb-violet {
-  width: 420px; height: 420px;
-  background: rgba(124,58,237,.15);
-  bottom: 3rem; left: 2rem;
-}
+    <!-- ========== IMAGES ========== -->
+    <div class="section">
+      <h2>5. Images</h2>
+      <pre>
+&lt;img src="photo.jpg" alt="Meri photo" width="300" height="200"&gt;
 
-/* Blog grid */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.8rem;
-}
+&lt;!-- Internet se image --&gt;
+&lt;img src="https://picsum.photos/300/200" alt="Random photo"&gt;</pre
+      >
+      <table>
+        <tr>
+          <th>Attribute</th>
+          <th>Kaam</th>
+        </tr>
+        <tr>
+          <td><code>src</code></td>
+          <td>Image ka path ya URL</td>
+        </tr>
+        <tr>
+          <td><code>alt</code></td>
+          <td>Image na dikhe to yeh text aata hai</td>
+        </tr>
+        <tr>
+          <td><code>width</code></td>
+          <td>Chaudai (pixels mein)</td>
+        </tr>
+        <tr>
+          <td><code>height</code></td>
+          <td>Unchai (pixels mein)</td>
+        </tr>
+      </table>
+      <div class="note">
+        Note: <code>&lt;img&gt;</code> tag ko closing tag ki zaroorat nahi hoti.
+      </div>
+    </div>
 
-/* Blog card */
-.blog-card {
-  background: var(--white);
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  border: 2px solid transparent;
-  display: flex;
-  flex-direction: column;
-  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
-}
-.blog-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-.bc-1:hover { border-color: rgba(249,115,22,.28); }
-.bc-2:hover { border-color: rgba(236,72,153,.28); }
-.bc-3:hover { border-color: rgba(124,58,237,.28); }
-.bc-4:hover { border-color: rgba(14,165,233,.28); }
-.bc-5:hover { border-color: rgba(16,185,129,.28); }
-.bc-6:hover { border-color: rgba(217,70,239,.28); }
+    <!-- ========== LISTS ========== -->
+    <div class="section">
+      <h2>6. Lists (Soochi)</h2>
+      <pre>
+&lt;!-- Unordered List (bullets ke saath) --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Doodh&lt;/li&gt;
+  &lt;li&gt;Bread&lt;/li&gt;
+  &lt;li&gt;Ande&lt;/li&gt;
+&lt;/ul&gt;
 
-.blog-img-wrap {
-  position: relative;
-  height: 210px;
-  overflow: hidden;
-}
-.blog-img-wrap img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform .8s ease;
-}
-.blog-card:hover .blog-img-wrap img { transform: scale(1.08); }
+&lt;!-- Ordered List (numbers ke saath) --&gt;
+&lt;ol&gt;
+  &lt;li&gt;Paani ubaalen&lt;/li&gt;
+  &lt;li&gt;Chai patti daalen&lt;/li&gt;
+  &lt;li&gt;Cheeni daalen&lt;/li&gt;
+&lt;/ol&gt;
 
-/* Category badge */
-.blog-cat-badge {
-  position: absolute;
-  top: .9rem; left: .9rem;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: .3rem;
-  padding: .38rem .9rem;
-  border-radius: var(--r-full);
-  font-size: .71rem;
-  font-weight: 700;
-  color: var(--white);
-  box-shadow: 0 2px 10px rgba(0,0,0,.2);
-}
-.bg-orange  { background: linear-gradient(135deg, #f97316, #facc15); }
-.bg-pink    { background: linear-gradient(135deg, #ec4899, #f43f5e); }
-.bg-violet  { background: linear-gradient(135deg, #7c3aed, #a855f7); }
-.bg-sky     { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
-.bg-green   { background: linear-gradient(135deg, #10b981, #84cc16); }
-.bg-fuchsia { background: linear-gradient(135deg, #d946ef, #ec4899); }
+&lt;!-- Nested List (list ke andar list) --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fruits
+    &lt;ul&gt;
+      &lt;li&gt;Aam&lt;/li&gt;
+      &lt;li&gt;Seb&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre
+      >
+    </div>
 
-.blog-card-body {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding-bottom: 3.5rem;
-  position: relative;
-}
-.blog-meta {
-  font-size: .77rem;
-  color: var(--text-light);
-  margin-bottom: .75rem;
-  display: flex;
-  align-items: center;
-  gap: .3rem;
-}
-.blog-card-title {
-  font-size: 1.12rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: .65rem;
-  line-height: 1.4;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  transition: color var(--ease);
-}
-.blog-card:hover .blog-card-title { color: var(--primary); }
-.blog-card-desc {
-  font-size: .87rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  flex: 1;
-  margin-bottom: 1.3rem;
-}
-.blog-read-more {
-  position: absolute;
-  bottom: 1rem;
-  left: 1.5rem;
-  right: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: .45rem;
-  font-size: .87rem;
-  font-weight: 700;
-  color: var(--white);
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  padding: .6rem 1rem;
-  border-radius: var(--r-md);
-  transition: transform var(--ease), box-shadow var(--ease);
-}
-.blog-read-more:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(233,30,99,.25);
-}
-.blog-read-more i { font-size: .75rem; }
+    <!-- ========== TABLES ========== -->
+    <div class="section">
+      <h2>7. Tables (Taalika)</h2>
+      <pre>
+&lt;table border="1"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Din&lt;/th&gt;
+      &lt;th&gt;Subject&lt;/th&gt;
+      &lt;th&gt;Samay&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Monday&lt;/td&gt;
+      &lt;td&gt;HTML&lt;/td&gt;
+      &lt;td&gt;10:00 AM&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Tuesday&lt;/td&gt;
+      &lt;td&gt;CSS&lt;/td&gt;
+      &lt;td&gt;11:00 AM&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre
+      >
+      <table>
+        <tr>
+          <th>Tag</th>
+          <th>Kaam</th>
+        </tr>
+        <tr>
+          <td><code>&lt;table&gt;</code></td>
+          <td>Table shuru karta hai</td>
+        </tr>
+        <tr>
+          <td><code>&lt;thead&gt;</code></td>
+          <td>Table ka header section</td>
+        </tr>
+        <tr>
+          <td><code>&lt;tbody&gt;</code></td>
+          <td>Table ka data section</td>
+        </tr>
+        <tr>
+          <td><code>&lt;tr&gt;</code></td>
+          <td>Table Row (ek line)</td>
+        </tr>
+        <tr>
+          <td><code>&lt;th&gt;</code></td>
+          <td>Table Heading (bold)</td>
+        </tr>
+        <tr>
+          <td><code>&lt;td&gt;</code></td>
+          <td>Table Data (normal cell)</td>
+        </tr>
+      </table>
+    </div>
 
-</style>
-<!-- ======================================================
-     TRENDING BLOG POSTS
-====================================================== -->
-<section id="blog" aria-labelledby="blogHeading">
-  <div class="blog-bg-blob bb-pink"></div>
-  <div class="blog-bg-blob bb-violet"></div>
+    <!-- ========== FORMS ========== -->
+    <div class="section">
+      <h2>8. Forms</h2>
+      <pre>
+&lt;form action="/submit" method="post"&gt;
 
-  <div class="container">
+  &lt;!-- Text Input --&gt;
+  &lt;label for="naam"&gt;Aapka Naam:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="text" id="naam" name="naam" placeholder="Naam likhein"&gt;&lt;br&gt;&lt;br&gt;
 
-    <header class="section-header">
-      <span class="section-badge badge-fuchsia">Latest Articles</span>
-      <h2 class="section-title reveal" id="blogHeading">
-        Trending <span class="gradient-fuchsia">Blog Posts</span>
-      </h2>
-      <p class="section-sub reveal">
-        Stories, tips, and inspiration from the creative world to fuel your passion.
-      </p>
-    </header>
+  &lt;!-- Email Input --&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="email" id="email" name="email" placeholder="Email likhein"&gt;&lt;br&gt;&lt;br&gt;
 
-    <div class="blog-grid">
+  &lt;!-- Password --&gt;
+  &lt;input type="password" placeholder="Password"&gt;&lt;br&gt;&lt;br&gt;
 
-      <!-- Item 1 - Skincare -->
-      <article class="blog-card bc-1 reveal" aria-label="Skincare Essentials">
-        <div class="blog-img-wrap">
-          <span class="blog-cat-badge bg-orange">
-            <i class="fa-solid fa-spa"></i> Skincare
-          </span>
-          <img
-            src="https://m.media-amazon.com/images/I/51x78epntaL._SL1060_.jpg"
-            alt="Skincare Essentials"
-            loading="lazy"
-          />
-        </div>
-        <div class="blog-card-body">
-          <p class="blog-meta">
-            <i class="fa-solid fa-star"></i> 4.9 &nbsp;•&nbsp; 234 reviews
-          </p>
-          <h3 class="blog-card-title">Skincare Essentials</h3>
-          <p class="blog-card-desc">Daily skincare must-haves. Glow with confidence every single day.</p>
-          <a href="https://musehubcreative.blogspot.com/p/skincare-essentials.html" class="blog-read-more" target="_blank" rel="noopener">
-            <i class="fa-solid fa-eye"></i> View Deal
-          </a>
-        </div>
-      </article>
+  &lt;!-- Radio Buttons --&gt;
+  &lt;input type="radio" name="gender" value="male"&gt; Male
+  &lt;input type="radio" name="gender" value="female"&gt; Female&lt;br&gt;&lt;br&gt;
 
-      <!-- Item 2 - Hair Care -->
-      <article class="blog-card bc-2 reveal" aria-label="Hair Care Products">
-        <div class="blog-img-wrap">
-          <span class="blog-cat-badge bg-pink">
-            <i class="fa-solid fa-leaf"></i> Hair Care
-          </span>
-          <img
-            src="https://m.media-amazon.com/images/I/81P7Bs8B2NL._SL1500_.jpg"
-            alt="Hair Care Products"
-            loading="lazy"
-          />
-        </div>
-        <div class="blog-card-body">
-          <p class="blog-meta">
-            <i class="fa-solid fa-star"></i> 4.8 &nbsp;•&nbsp; 189 reviews
-          </p>
-          <h3 class="blog-card-title">Hair Care Products</h3>
-          <p class="blog-card-desc">Healthy & shiny hair. Care for every strand with love.</p>
-          <a href="https://musehubcreative.blogspot.com/2026/03/hair-care-products.html" class="blog-read-more" target="_blank" rel="noopener">
-            <i class="fa-solid fa-eye"></i> View Deal
-          </a>
-        </div>
-      </article>
+  &lt;!-- Checkbox --&gt;
+  &lt;input type="checkbox" name="agree" value="yes"&gt; I agree&lt;br&gt;&lt;br&gt;
 
-      <!-- Item 3 - Makeup -->
-      <article class="blog-card bc-3 reveal" aria-label="Makeup Essentials">
-        <div class="blog-img-wrap">
-          <span class="blog-cat-badge bg-violet">
-            <i class="fa-solid fa-wand-magic-sparkles"></i> Makeup
-          </span>
-          <img
-            src="https://m.media-amazon.com/images/I/81jbSizs6gL._SL1500_.jpg"
-            alt="Makeup Basics"
-            loading="lazy"
-          />
-        </div>
-        <div class="blog-card-body">
-          <p class="blog-meta">
-            <i class="fa-solid fa-star"></i> 4.9 &nbsp;•&nbsp; 312 reviews
-          </p>
-          <h3 class="blog-card-title">Makeup Essentials</h3>
-          <p class="blog-card-desc">Everyday beauty essentials. Simple, stylish, stunning looks.</p>
-          <a href="https://musehubcreative.blogspot.com/2026/03/top-makeup-essentials.html" class="blog-read-more" target="_blank" rel="noopener">
-            <i class="fa-solid fa-eye"></i> View Deal
-          </a>
-        </div>
-      </article>
+  &lt;!-- Dropdown --&gt;
+  &lt;select name="city"&gt;
+    &lt;option value="delhi"&gt;Delhi&lt;/option&gt;
+    &lt;option value="mumbai"&gt;Mumbai&lt;/option&gt;
+  &lt;/select&gt;&lt;br&gt;&lt;br&gt;
 
-      <!-- Item 4 - Comfort Wear -->
-      <article class="blog-card bc-4 reveal" aria-label="Comfort Wear">
-        <div class="blog-img-wrap">
-          <span class="blog-cat-badge bg-sky">
-            <i class="fa-solid fa-home"></i> Comfort Wear
-          </span>
-          <img
-            src="https://m.media-amazon.com/images/I/71XRZJMs1rL._AC_SX569_.jpg"
-            alt="Comfort Wear for Home"
-            loading="lazy"
-          />
-        </div>
-        <div class="blog-card-body">
-          <p class="blog-meta">
-            <i class="fa-solid fa-star"></i> 4.7 &nbsp;•&nbsp; 156 reviews
-          </p>
-          <h3 class="blog-card-title">Comfort Wear for Home</h3>
-          <p class="blog-card-desc">Cozy essentials — nightwear, loungewear & pajamas for ultimate comfort.</p>
-          <a href="https://musehubcreative.blogspot.com/2026/03/comfort-wear-for-home_10.html" class="blog-read-more" target="_blank" rel="noopener">
-            <i class="fa-solid fa-eye"></i> View Deal
-          </a>
-        </div>
-      </article>
+  &lt;!-- Textarea --&gt;
+  &lt;textarea name="message" rows="4" cols="40" placeholder="Apna message likhein"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
 
-      <!-- Item 5 - Handbags -->
-      <article class="blog-card bc-5 reveal" aria-label="Handbags and Wallets">
-        <div class="blog-img-wrap">
-          <span class="blog-cat-badge bg-green">
-            <i class="fa-solid fa-bag-shopping"></i> Accessories
-          </span>
-          <img
-            src="https://m.media-amazon.com/images/I/71HVNrVUdgL._AC_SX569_.jpg"
-            alt="Handbags and Wallets"
-            loading="lazy"
-          />
-        </div>
-        <div class="blog-card-body">
-          <p class="blog-meta">
-            <i class="fa-solid fa-star"></i> 4.9 &nbsp;•&nbsp; 267 reviews
-          </p>
-          <h3 class="blog-card-title">Handbags & Wallets</h3>
-          <p class="blog-card-desc">Stylish daily accessories. Carry elegance with ease wherever you go.</p>
-          <a href="https://musehubcreative.blogspot.com/2026/03/handbags-wallets.html" class="blog-read-more" target="_blank" rel="noopener">
-            <i class="fa-solid fa-eye"></i> View Deal
-          </a>
-        </div>
-      </article>
+  &lt;!-- Submit Button --&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+  &lt;button type="reset"&gt;Reset&lt;/button&gt;
 
-      <!-- Item 6 - Jewelry -->
-      <article class="blog-card bc-6 reveal" aria-label="Jewelry and Accessories">
-        <div class="blog-img-wrap">
-          <span class="blog-cat-badge bg-fuchsia">
-            <i class="fa-solid fa-gem"></i> Jewelry
-          </span>
-          <img
-            src="https://m.media-amazon.com/images/I/71i4LgBuwxL._AC_SY535_.jpg"
-            alt="Jewelry and Accessories"
-            loading="lazy"
-          />
-        </div>
-        <div class="blog-card-body">
-          <p class="blog-meta">
-            <i class="fa-solid fa-star"></i> 5.0 &nbsp;•&nbsp; 421 reviews
-          </p>
-          <h3 class="blog-card-title">Jewelry & Accessories</h3>
-          <p class="blog-card-desc">Trendy fashion jewelry. Shine with timeless charm and elegance.</p>
-          <a href="https://musehubcreative.blogspot.com/2026/03/trending-jewelry-for-women.html" class="blog-read-more" target="_blank" rel="noopener">
-            <i class="fa-solid fa-eye"></i> View Deal
-          </a>
-        </div>
-      </article>
+&lt;/form&gt;</pre
+      >
+      <table>
+        <tr>
+          <th>Input Type</th>
+          <th>Kaam</th>
+        </tr>
+        <tr>
+          <td><code>type="text"</code></td>
+          <td>Normal text likhne ke liye</td>
+        </tr>
+        <tr>
+          <td><code>type="email"</code></td>
+          <td>Email validate karta hai</td>
+        </tr>
+        <tr>
+          <td><code>type="password"</code></td>
+          <td>Text chhupa ke dikhata hai</td>
+        </tr>
+        <tr>
+          <td><code>type="number"</code></td>
+          <td>Sirf number allow karta hai</td>
+        </tr>
+        <tr>
+          <td><code>type="checkbox"</code></td>
+          <td>Tick/untick box</td>
+        </tr>
+        <tr>
+          <td><code>type="radio"</code></td>
+          <td>Ek option chunne ke liye</td>
+        </tr>
+        <tr>
+          <td><code>type="date"</code></td>
+          <td>Date picker</td>
+        </tr>
+        <tr>
+          <td><code>type="file"</code></td>
+          <td>File upload</td>
+        </tr>
+      </table>
+    </div>
 
-      <!-- Item 7 - Footwear -->
-      <article class="blog-card bc-1 reveal" aria-label="Footwear">
-        <div class="blog-img-wrap">
-          <span class="blog-cat-badge bg-orange">
-            <i class="fa-solid fa-shoe-prints"></i> Footwear
-          </span>
-          <img
-            src="https://m.media-amazon.com/images/I/61KbYXsPnwL._AC_SY695_.jpg"
-            alt="Footwear"
-            loading="lazy"
-          />
-        </div>
-        <div class="blog-card-body">
-          <p class="blog-meta">
-            <i class="fa-solid fa-star"></i> 4.8 &nbsp;•&nbsp; 198 reviews
-          </p>
-          <h3 class="blog-card-title">Footwear</h3>
-          <p class="blog-card-desc">Comfort & style combined. Step out with confidence every day.</p>
-          <a href="https://musehubcreative.blogspot.com/2026/04/best-footwear-for-women.html" class="blog-read-more" target="_blank" rel="noopener">
-            <i class="fa-solid fa-eye"></i> View Deal
-          </a>
-        </div>
-      </article>
+    <!-- ========== DIV & SPAN ========== -->
+    <div class="section">
+      <h2>9. Div aur Span</h2>
+      <pre>
+&lt;!-- DIV: Block element — poori line leta hai --&gt;
+&lt;div style="background-color: lightblue; padding: 10px;"&gt;
+  Yeh ek DIV container hai.
+&lt;/div&gt;
 
-      <!-- Item 8 - Fitness Wear -->
-      <article class="blog-card bc-2 reveal" aria-label="Fitness Wear">
-        <div class="blog-img-wrap">
-          <span class="blog-cat-badge bg-pink">
-            <i class="fa-solid fa-dumbbell"></i> Fitness
-          </span>
-          <img
-            src="https://m.media-amazon.com/images/I/81ZS9ZwbP2L._AC_SY741_.jpg"
-            alt="Fitness Wear"
-            loading="lazy"
-          />
-        </div>
-        <div class="blog-card-body">
-          <p class="blog-meta">
-            <i class="fa-solid fa-star"></i> 4.7 &nbsp;•&nbsp; 143 reviews
-          </p>
-          <h3 class="blog-card-title">Fitness Wear</h3>
-          <p class="blog-card-desc">Active & stylish outfits. Comfort for workouts and active days.</p>
-          <a href="https://musehubcreative.blogspot.com/2026/04/top-fitness-wear-for-women.html" class="blog-read-more" target="_blank" rel="noopener">
-            <i class="fa-solid fa-eye"></i> View Deal
-          </a>
-        </div>
-      </article>
+&lt;!-- SPAN: Inline element — sirf apni jagah leta hai --&gt;
+&lt;p&gt;Is sentence mein &lt;span style="color: red;"&gt;yeh word red&lt;/span&gt; hai.&lt;/p&gt;</pre
+      >
+      <table>
+        <tr>
+          <th>Tag</th>
+          <th>Type</th>
+          <th>Use</th>
+        </tr>
+        <tr>
+          <td><code>&lt;div&gt;</code></td>
+          <td>Block</td>
+          <td>Sections group karne ke liye</td>
+        </tr>
+        <tr>
+          <td><code>&lt;span&gt;</code></td>
+          <td>Inline</td>
+          <td>Text ke andar styling ke liye</td>
+        </tr>
+      </table>
+    </div>
 
-      <!-- Item 9 - Hygiene -->
-      <article class="blog-card bc-3 reveal" aria-label="Personal Hygiene">
-        <div class="blog-img-wrap">
-          <span class="blog-cat-badge bg-violet">
-            <i class="fa-solid fa-pump-soap"></i> Hygiene
-          </span>
-          <img
-            src="https://m.media-amazon.com/images/I/71fNEk50kjL._SX679_.jpg"
-            alt="Personal Hygiene"
-            loading="lazy"
-          />
-        </div>
-        <div class="blog-card-body">
-          <p class="blog-meta">
-            <i class="fa-solid fa-star"></i> 4.9 &nbsp;•&nbsp; 287 reviews
-          </p>
-          <h3 class="blog-card-title">Personal Hygiene</h3>
-          <p class="blog-card-desc">Daily hygiene essentials. Stay fresh & confident all day long.</p>
-          <a href="https://musehubcreative.blogspot.com/2026/04/daily-hygiene-essentials.html" class="blog-read-more" target="_blank" rel="noopener">
-            <i class="fa-solid fa-eye"></i> View Deal
-          </a>
-        </div>
-      </article>
+    <!-- ========== SEMANTIC TAGS ========== -->
+    <div class="section">
+      <h2>10. HTML5 Semantic Tags</h2>
+      <pre>
+&lt;header&gt;  ... &lt;/header&gt;   &lt;!-- Page ka upar wala hissa --&gt;
+&lt;nav&gt;     ... &lt;/nav&gt;      &lt;!-- Navigation links --&gt;
+&lt;main&gt;    ... &lt;/main&gt;     &lt;!-- Main content --&gt;
+&lt;section&gt; ... &lt;/section&gt;  &lt;!-- Ek section --&gt;
+&lt;article&gt; ... &lt;/article&gt;  &lt;!-- Blog post ya article --&gt;
+&lt;aside&gt;   ... &lt;/aside&gt;    &lt;!-- Side content (sidebar) --&gt;
+&lt;footer&gt;  ... &lt;/footer&gt;   &lt;!-- Page ka neeche wala hissa --&gt;</pre
+      >
+      <div class="note">
+        Yeh tags <code>&lt;div&gt;</code> ki tarah kaam karte hain, lekin inke
+        naam se pata chalta hai ki andar kya hai. Search engines (Google) aur
+        screen readers inhe samajhte hain.
+      </div>
+    </div>
 
-      <!-- Item 10 - Office Essentials -->
-      <article class="blog-card bc-4 reveal" aria-label="Office Essentials">
-        <div class="blog-img-wrap">
-          <span class="blog-cat-badge bg-sky">
-            <i class="fa-solid fa-briefcase"></i> Office
-          </span>
-          <img
-            src="https://m.media-amazon.com/images/I/817VZ-ks71L._AC_SL1500_.jpg"
-            alt="Office Essentials for Women"
-            loading="lazy"
-          />
-        </div>
-        <div class="blog-card-body">
-          <p class="blog-meta">
-            <i class="fa-solid fa-star"></i> 4.8 &nbsp;•&nbsp; 165 reviews
-          </p>
-          <h3 class="blog-card-title">Office Essentials for Women</h3>
-          <p class="blog-card-desc">Professional yet stylish essentials designed for modern working women.</p>
-          <a href="https://musehubcreative.blogspot.com/2026/03/office-essentials-for-women.html" class="blog-read-more" target="_blank" rel="noopener">
-            <i class="fa-solid fa-eye"></i> View Deal
-          </a>
-        </div>
-      </article>
+    <!-- ========== COMMENTS ========== -->
+    <div class="section">
+      <h2>11. Comments</h2>
+      <pre>
+&lt;!-- Yeh ek comment hai. Browser ise nahi dikhata. --&gt;
+&lt;!-- Code samjhane ke liye comments likho --&gt;</pre
+      >
+    </div>
 
-    </div><!-- /.blog-grid -->
-  </div>
-</section>
-<script>/* ============================================================
-   10. LIFESTYLE & BLOG CARD — tilt effect on desktop hover
-============================================================ */
-(function initCardTilt() {
-  const cards = document.querySelectorAll(
-    ".lifestyle-card, .blog-card, .cat-card"
-  );
+    <!-- ========== INLINE STYLES ========== -->
+    <div class="section">
+      <h2>12. Inline Styling (Basic)</h2>
+      <pre>
+&lt;p style="color: red;"&gt;Yeh text red hai.&lt;/p&gt;
+&lt;p style="color: blue; font-size: 20px;"&gt;Yeh blue aur bada hai.&lt;/p&gt;
+&lt;p style="background-color: yellow;"&gt;Yellow background.&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;Center mein hai.&lt;/p&gt;
+&lt;div style="width: 200px; height: 100px; background-color: lightgreen;"&gt;&lt;/div&gt;</pre
+      >
+    </div>
 
-  /* Only on non-touch devices */
-  if (window.matchMedia("(hover: none)").matches) return;
+    <!-- ========== QUICK REFERENCE ========== -->
+    <div class="section">
+      <h2>Quick Reference — Sabse Common Tags</h2>
+      <table>
+        <tr>
+          <th>Tag</th>
+          <th>Kaam</th>
+        </tr>
+        <tr>
+          <td><code>&lt;h1&gt; ... &lt;h6&gt;</code></td>
+          <td>Headings</td>
+        </tr>
+        <tr>
+          <td><code>&lt;p&gt;</code></td>
+          <td>Paragraph</td>
+        </tr>
+        <tr>
+          <td><code>&lt;b&gt;</code> / <code>&lt;strong&gt;</code></td>
+          <td>Bold text</td>
+        </tr>
+        <tr>
+          <td><code>&lt;i&gt;</code> / <code>&lt;em&gt;</code></td>
+          <td>Italic text</td>
+        </tr>
+        <tr>
+          <td><code>&lt;u&gt;</code></td>
+          <td>Underline</td>
+        </tr>
+        <tr>
+          <td><code>&lt;br&gt;</code></td>
+          <td>Line break</td>
+        </tr>
+        <tr>
+          <td><code>&lt;hr&gt;</code></td>
+          <td>Horizontal line</td>
+        </tr>
+        <tr>
+          <td><code>&lt;a href=""&gt;</code></td>
+          <td>Link</td>
+        </tr>
+        <tr>
+          <td><code>&lt;img src="" alt=""&gt;</code></td>
+          <td>Image</td>
+        </tr>
+        <tr>
+          <td><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code></td>
+          <td>Unordered / Ordered list</td>
+        </tr>
+        <tr>
+          <td><code>&lt;li&gt;</code></td>
+          <td>List item</td>
+        </tr>
+        <tr>
+          <td><code>&lt;table&gt;</code></td>
+          <td>Table</td>
+        </tr>
+        <tr>
+          <td><code>&lt;tr&gt;</code></td>
+          <td>Table row</td>
+        </tr>
+        <tr>
+          <td><code>&lt;th&gt;</code> / <code>&lt;td&gt;</code></td>
+          <td>Table heading / data</td>
+        </tr>
+        <tr>
+          <td><code>&lt;form&gt;</code></td>
+          <td>Form</td>
+        </tr>
+        <tr>
+          <td><code>&lt;input&gt;</code></td>
+          <td>Input field</td>
+        </tr>
+        <tr>
+          <td><code>&lt;button&gt;</code></td>
+          <td>Button</td>
+        </tr>
+        <tr>
+          <td><code>&lt;div&gt;</code></td>
+          <td>Block container</td>
+        </tr>
+        <tr>
+          <td><code>&lt;span&gt;</code></td>
+          <td>Inline container</td>
+        </tr>
+        <tr>
+          <td><code>&lt;!-- --&gt;</code></td>
+          <td>Comment</td>
+        </tr>
+      </table>
+    </div>
 
-  cards.forEach(function (card) {
-    card.addEventListener("mousemove", function (e) {
-      const rect   = card.getBoundingClientRect();
-      const x      = (e.clientX - rect.left) / rect.width  - 0.5;
-      const y      = (e.clientY - rect.top)  / rect.height - 0.5;
-      const rotX   = -(y * 6).toFixed(2);
-      const rotY   =  (x * 6).toFixed(2);
-
-      card.style.transform =
-        "translateY(-8px) rotateX(" + rotX + "deg) rotateY(" + rotY + "deg) scale(1.02)";
-      card.style.transition = "transform 0.08s ease";
-    });
-
-    card.addEventListener("mouseleave", function () {
-      card.style.transform  = "";
-      card.style.transition = "transform 0.35s ease";
-    });
-  });
-})();</script>
+    <p style="text-align: center; color: #888; margin-top: 30px">
+      HTML Sikho — VS Code mein open karo, Browser mein dekho!
+    </p>
+  </body>
+</html>
