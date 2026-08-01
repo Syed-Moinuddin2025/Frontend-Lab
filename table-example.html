@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Table Example — कदम दर कदम (Hindi)</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height:1.6; padding:20px; background:#f7f7f7; }
+    h1,h2 { color:#333 }
+    .box { background:#fff; padding:16px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.08); margin-bottom:20px }
+    table { border-collapse:collapse; width:100%; max-width:800px; }
+    table, th, td { border:1px solid #ccc; }
+    th, td { padding:8px; text-align:left }
+    th { background:#f0f0f8 }
+    caption { caption-side:top; font-weight:bold; margin-bottom:8px }
+    pre { background:#272822; color:#f8f8f2; padding:12px; overflow:auto; border-radius:6px }
+    .note { font-size:0.95em; color:#555 }
+  </style>
+</head>
+<body>
+  <h1>HTML Table — कदम दर कदम (Hindi)</h1>
+  <div class="box">
+    <p>नमस्ते! यह फ़ाइल HTML में <strong>table</strong> (तालिका) बनाने का आसान और क्रमिक तरीका बताती है। हर चरण में आप एक छोटा उदाहरण और उसके कोड को देखेंगे। ब्राउज़र में खुलते ही तालिकाएँ दिखेंगी और नीचे कोड भी दिया है — आप फ़ाइल को एडिट करके अभ्यास कर सकते हैं।</p>
+  </div>
+
+  <h2>Step 1: साधारण तालिका (Basic table)</h2>
+  <div class="box">
+    <p class="note">यह सबसे सरल तालिका है: rows (पंक्तियाँ) और columns (स्तंभ) <code>&lt;tr&gt;</code> और <code>&lt;td&gt;</code> से बनते हैं।</p>
+    <table>
+      <tr>
+        <td>रोज़ाना</td>
+        <td>नमूना 1</td>
+        <td>नमूना 2</td>
+      </tr>
+      <tr>
+        <td>सोमवार</td>
+        <td>अ</td>
+        <td>ब</td>
+      </tr>
+      <tr>
+        <td>मंगलवार</td>
+        <td>स</td>
+        <td>द</td>
+      </tr>
+    </table>
+n    <h3>Code</h3>
+    <pre>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;रोज़ाना&lt;/td&gt;
+    &lt;td&gt;नमूना 1&lt;/td&gt;
+    &lt;td&gt;नमूना 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;...&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+  </div>
+
+  <h2>Step 2: हेडर (Headers) — &lt;th&gt; और &lt;thead&gt;</h2>
+  <div class="box">
+    <p class="note">तालिका के शीर्ष (header) में सामान्यतः <code>&lt;th&gt;</code> टैग का उपयोग किया जाता है — यह ब्राउज़र में बोल्ड और केंद्रित दिखता है। बड़े तालिकाओं में <code>&lt;thead&gt;</code> और <code>&lt;tbody&gt;</code> इस्तेमाल करें।</p>
+
+    <table>
+      <caption>किताबों का सारांश</caption>
+      <thead>
+        <tr>
+          <th>शीर्षक</th>
+          <th>लेखक</th>
+          <th>वर्ष</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>अलिफ लैला</td>
+          <td>रचना</td>
+          <td>2020</td>
+        </tr>
+        <tr>
+          <td>सीखना</td>
+          <td>उदाहरण</td>
+          <td>2018</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Code</h3>
+    <pre>&lt;table&gt;
+  &lt;caption&gt;किताबों का सारांश&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;शीर्षक&lt;/th&gt;
+      &lt;th&gt;लेखक&lt;/th&gt;
+      &lt;th&gt;वर्ष&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;...&lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+  </div>
+
+  <h2>Step 3: फुटर (Footer) — &lt;tfoot&gt;</h2>
+  <div class="box">
+    <p class="note">आप चाहें तो तालिका का सार (या कुल) नीचे दिखाने के लिए <code>&lt;tfoot&gt;</code> भी जोड़ सकते हैं।</p>
+
+    <table>
+      <thead>
+        <tr><th>प्रोडक्ट</th><th>मूल्य</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>आ</td><td>100</td></tr>
+        <tr><td>इ</td><td>200</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>कुल</td><td>300</td></tr>
+      </tfoot>
+    </table>
+
+    <h3>Code</h3>
+    <pre>&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;...&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;...&lt;/tbody&gt;
+  &lt;tfoot&gt;&lt;tr&gt;...&lt;/tr&gt;&lt;/tfoot&gt;
+&lt;/table&gt;
+</pre>
+  </div>
+
+  <h2>Step 4: colspan और rowspan (Columns/Rows Merge)</h2>
+  <div class="box">
+    <p class="note">कभी-कभी किसी सेल को कई कॉलम या कई पंक्तियों में फैला (merge) करना होता है — इसके लिए <code>colspan</code> और <code>rowspan</code> का उपयोग करें। नीचे उदाहरण देखें।</p>
+
+    <table>
+      <tr>
+        <th>नाम</th>
+        <th>विवरण</th>
+        <th>नोट्स</th>
+      </tr>
+      <tr>
+        <td rowspan="2">अमित</td>
+        <td>डिज़ाइनर</td>
+        <td>पार्ट-टाइम</td>
+      </tr>
+      <tr>
+        <td colspan="2">अनुभव: 3 साल</td>
+      </tr>
+    </table>
+
+    <h3>Code</h3>
+    <pre>&lt;tr&gt;
+  &lt;td rowspan="2"&gt;अमित&lt;/td&gt;
+  &lt;td&gt;डिज़ाइनर&lt;/td&gt;
+  &lt;td&gt;पार्ट-टाइम&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td colspan="2"&gt;अनुभव: 3 साल&lt;/td&gt;
+&lt;/tr&gt;
+</pre>
+  </div>
+
+  <h2>Step 5: CSS से स्टाइल (Styling)</h2>
+  <div class="box">
+    <p class="note">तालिका को बेहतर दिखाने के लिए CSS का उपयोग करें — border-collapse, padding, hover effects आदि बहुत उपयोगी हैं। ऊपर की स्टाइल फ़ाइल में कुछ बुनियादी CSS पहले से है।</p>
+
+    <p>अगर चाहें, नीचे की तरह hover effect जोड़ सकते हैं (यह पहले से नहीं जोड़ा गया है, आप जोड़ कर देखें):</p>
+    <pre>table tr:hover { background:#f9f9ef; }
+</pre>
+  </div>
+
+  <h2>अगला कदम (Next)</h2>
+  <div class="box">
+    <ul>
+      <li>फ़ाइल को ब्राउज़र में खोलें: D:\\Frontend-Lab\\table-example.html — ब्राउज़र में दोगुना-क्लिक करें या ब्राउज़र में खोलें।</li>
+      <li>कोड बदलें और पेज रिफ्रेश करें ताकि परिवर्तन दिखें।</li>
+      <li>प्रैक्टिस: 5 कॉलम और 6 पंक्तियों की तालिका बनाएँ, कुछ सेल्स को colspan/rowspan दें।</li>
+    </ul>
+    <p>यदि आप चाहें तो मैं एक अभ्यास (exercise) दे सकता हूँ और आपके द्वारा बदले गए कोड की जाँच कर दूँगा। बताइए क्या चाहेंगे?</p>
+  </div>
+
+</body>
+</html>

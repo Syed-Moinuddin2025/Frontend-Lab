@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Table Example — Hinglish Step-by-Step</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height:1.6; padding:20px; background:#f7f7f7; }
+    h1,h2 { color:#333 }
+    .box { background:#fff; padding:16px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.08); margin-bottom:20px }
+    table { border-collapse:collapse; width:100%; max-width:800px; }
+    table, th, td { border:1px solid #ccc; }
+    th, td { padding:8px; text-align:left }
+    th { background:#f0f0f8 }
+    caption { caption-side:top; font-weight:bold; margin-bottom:8px }
+    pre { background:#272822; color:#f8f8f2; padding:12px; overflow:auto; border-radius:6px }
+    .note { font-size:0.95em; color:#555 }
+  </style>
+</head>
+<body>
+  <h1>HTML Table — Hinglish Step-by-Step</h1>
+  <div class="box">
+    <p>Namaste! Yeh file simple Hinglish mein bata rahi hai kaise HTML mein <strong>table</strong> banate hain. Har step mein ek chhota example aur uska code diya hai — browser mein file open karke turant dekho aur edit karke practice karo.</p>
+  </div>
+
+  <h2>Step 1: Basic table</h2>
+  <div class="box">
+    <p class="note">Simple table mein rows banate hain <code>&lt;tr&gt;</code> se aur cells <code>&lt;td&gt;</code> se.</p>
+    <table>
+      <tr>
+        <td>Day</td>
+        <td>Sample 1</td>
+        <td>Sample 2</td>
+      </tr>
+      <tr>
+        <td>Monday</td>
+        <td>A</td>
+        <td>B</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td>C</td>
+        <td>D</td>
+      </tr>
+    </table>
+
+    <h3>Code</h3>
+    <pre>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Day&lt;/td&gt;
+    &lt;td&gt;Sample 1&lt;/td&gt;
+    &lt;td&gt;Sample 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;...&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+  </div>
+
+  <h2>Step 2: Header — &lt;th&gt; and &lt;thead&gt;</h2>
+  <div class="box">
+    <p class="note">Table header ke liye <code>&lt;th&gt;</code> use karte hain. Badi tables mein <code>&lt;thead&gt;</code> aur <code>&lt;tbody&gt;</code> helpful hote hain.</p>
+
+    <table>
+      <caption>Books Summary</caption>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alif Laila</td>
+          <td>Rachna</td>
+          <td>2020</td>
+        </tr>
+        <tr>
+          <td>Sikhna</td>
+          <td>Udaharan</td>
+          <td>2018</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Code</h3>
+    <pre>&lt;table&gt;
+  &lt;caption&gt;Books Summary&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Title&lt;/th&gt;
+      &lt;th&gt;Author&lt;/th&gt;
+      &lt;th&gt;Year&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;...&lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+  </div>
+
+  <h2>Step 3: Footer — &lt;tfoot&gt;</h2>
+  <div class="box">
+    <p class="note">Agar table ka total ya summary dikhana ho to <code>&lt;tfoot&gt;</code> use karo.</p>
+
+    <table>
+      <thead>
+        <tr><th>Product</th><th>Price</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A</td><td>100</td></tr>
+        <tr><td>B</td><td>200</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Total</td><td>300</td></tr>
+      </tfoot>
+    </table>
+
+    <h3>Code</h3>
+    <pre>&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;...&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;...&lt;/tbody&gt;
+  &lt;tfoot&gt;&lt;tr&gt;...&lt;/tr&gt;&lt;/tfoot&gt;
+&lt;/table&gt;
+</pre>
+  </div>
+
+  <h2>Step 4: colspan and rowspan (merge cells)</h2>
+  <div class="box">
+    <p class="note">Kisi cell ko multiple columns ya rows mein spread karna ho to <code>colspan</code> aur <code>rowspan</code> use karo.</p>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td rowspan="2">Amit</td>
+        <td>Designer</td>
+        <td>Part-time</td>
+      </tr>
+      <tr>
+        <td colspan="2">Experience: 3 years</td>
+      </tr>
+    </table>
+
+    <h3>Code</h3>
+    <pre>&lt;tr&gt;
+  &lt;td rowspan="2"&gt;Amit&lt;/td&gt;
+  &lt;td&gt;Designer&lt;/td&gt;
+  &lt;td&gt;Part-time&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td colspan="2"&gt;Experience: 3 years&lt;/td&gt;
+&lt;/tr&gt;
+</pre>
+  </div>
+
+  <h2>Step 5: CSS styling</h2>
+  <div class="box">
+    <p class="note">Table ko acha dikhane ke liye CSS use karo — border-collapse, padding, hover effects. Upar already kuch basic CSS add kiya hua hai.</p>
+    <p>Example hover add karne ke liye (aap isko file mein add karke dekho):</p>
+    <pre>table tr:hover { background:#f9f9ef; }
+</pre>
+  </div>
+
+  <h2>Next steps (Tum kya karna chahoge?)</h2>
+  <div class="box">
+    <ul>
+      <li>Open karo: D:\\Frontend-Lab\\table-example-hinglish.html in browser (double-click ya browser > Open file).</li>
+      <li>Edit karo aur page refresh karo taaki changes dikhe.</li>
+      <li>Practice: ek table banao with 5 columns and 6 rows, aur kuch cells ko colspan/rowspan do.</li>
+    </ul>
+    <p>Agar chaho toh main ek exercise de doon aur tumhara code check kar dunga. Kya chahoge?</p>
+  </div>
+
+</body>
+</html>
